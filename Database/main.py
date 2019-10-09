@@ -1,12 +1,15 @@
 from mongoengine import connect
-from GUI import Gui
+from GUI import Gui, Gui_training
 import tkinter as tk
 
 
 if __name__ == '__main__':
 
     db = connect('ToukaAnalytics')
-    root = tk.Tk()
-    db_manager = Gui(root, db)
+    #root = tk.Tk()
+    root_training = tk.Tk()
+    #db_manager = Gui(root, db)
+    training_window = Gui_training(root_training)
     # root.protocol("WM_DELETE_WINDOW", db_manager.kill_running_processes())
-    root.mainloop()
+    #root.mainloop()
+    root_training.mainloop()
