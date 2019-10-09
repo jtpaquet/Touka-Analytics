@@ -1,0 +1,31 @@
+UTILS
+=====
+
+- Trouver comment gérer les \\ dans le convertisseur
+- Vérifier si l'update de la database se fait rapidement
+- LoadDB
+
+APP
+===
+
+- Trouver comment marche Django
+- Implémenter les querys dans le UI
+- Updater le code pour la création de graphiques avec MongoEngine
+- Hoster la DB sur Atlas / google cloud
+- Mettre l'app sur ToukaAnalytics
+- Faire un UI pour le labelling de data/ajout de data/tokenization
+
+TEXT TO SPEECH
+==============
+
+Après avoir fait le chatbot:
+- Entrainer un AI pour qu'il parle comme un touka (lakasse srm)
+- Aller chercher 15min d'audio et le transcrire
+- Donner la réponse du chatbot à ce AI
+
+ROBOT
+=====
+
+Faire un ToukaBot qui parle comme un touka avec reconnaissance vocale et qui te répond comme un touka.
+Arduino + speaker
+

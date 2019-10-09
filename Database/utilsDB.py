@@ -1,4 +1,4 @@
-from mongoengine import DynamicDocument, StringField, ReferenceField, DateTimeField, DictField, ListField
+from mongoengine import DynamicDocument, StringField, ReferenceField, IntField, DateTimeField, DictField, ListField
 from numpy import random
 import datetime
 
@@ -21,6 +21,7 @@ class Users(DynamicDocument):
 
 class Messages(DynamicDocument):
     author = StringField(required=True)
+    timestamp = IntField(required=True)
     date = DateTimeField(default=datetime.datetime.utcnow(), required=True)
     type = StringField(required=True)
     content = StringField()
