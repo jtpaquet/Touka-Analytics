@@ -48,8 +48,54 @@ Version 0.3 introduces epoch-based training including custom (epoch-based as wel
 
 
 
+Analytics
+---------
+
+
+
+
+Archives
+--------
+
+
+
+
+Chatbot
+-------
+
+
+
+
+
+Database
+--------
+
+
+
+
+Figures
+-------
+
+
+
+
+LocalDB
+-------
+
+
+
+
+
+
+Text to speech
+--------------
+
+
+
+
+
 Utils
--------------
+-----
 
 `utils/run_tensorboard.py` is easy to use wrapper starting Tensorboard with model folder
 
