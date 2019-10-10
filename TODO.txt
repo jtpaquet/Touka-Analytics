@@ -18,9 +18,16 @@ APP
 - Trouver comment marche Django
 - Implémenter les querys dans le UI
 - Updater le code pour la création de graphiques avec MongoEngine
+- Implémenter les analytics dans l'app
 X Hoster la DB sur Atlas / google cloud
 - Mettre l'app sur ToukaAnalytics
 - Faire un UI pour le labelling de data/ajout de data/tokenization
+
+CHATBOT
+=======
+
+- Mettre le training sous forme (train_to, train_from) avec chaque input dans un fichier où chaque réponse correspond à la même ligne dans l'autre fichier
+- Entrainer le bot
 
 TEXT TO SPEECH
 ==============
