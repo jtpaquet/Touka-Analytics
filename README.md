@@ -5,13 +5,13 @@ Table of Contents
 -------------
 1. [Introduction](#introduction)
 2. [Setup](#setup)
-3. [Analytics] (#analytics)
-4. [Archives] (#archives)
-5. [Chatbot] (#chatbot)
-6. [Database] (#database)
-7. [Figures] (#figure)
-8. [LocalDB] (#localDB)
-9. [Text to speech] (#text-to-speech)
+3. [Analytics](#analytics)
+4. [Archives](#archives)
+5. [Chatbot](#chatbot)
+6. [Database](#database)
+7. [Figures](#figure)
+8. [LocalDB](#localDB)
+9. [Text to speech](#text-to-speech)
 10. [Utils](#utils)
 11. [Changelog](#changelog)
 
@@ -48,7 +48,7 @@ Version 0.3 introduces epoch-based training including custom (epoch-based as wel
 
 
 
-Analytics <a name="analytics"></a>
+Analytics
 -------------
 
 bruh
