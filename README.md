@@ -30,6 +30,7 @@ Analytics
 -------------
 
 ``touka_analytics.py`` génère des statistiques sur les membres de Toukas.
+``recherche_mot.py`` génère des statistiques sur les mots dits dans la conversation.
 
 
 Archives
