@@ -4,11 +4,12 @@ UTILS
 - Trouver comment gérer les \\ dans le convertisseur
 - Vérifier si l'update de la database se fait rapidement
 X LoadDB
+- Setup un venv
 
 ANALYTICS
 =========
 - Faire marcher touka_analytics.py avec la database
-- Faire marcher recherche_mot.py avec la database
+X Faire marcher recherche_mot.py avec la database
 
 APP
 ===
