@@ -1,0 +1,1 @@
+{$and: [{content: {$regex : '^inks', $options: 'i'}}, {author: 'Jérémy Talbot-Pâquet'}] }
