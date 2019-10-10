@@ -49,38 +49,38 @@ Version 0.3 introduces epoch-based training including custom (epoch-based as wel
 
 
 Analytics
----------
+-------------
 
 bruh
 
 
 Archives
---------
+-------------
 
 bruh
 
 
 Chatbot
--------
+-------------
 
 
 bruh
 
 
 Database
---------
+-------------
 
 bruh
 
 
 Figures
--------
+-------------
 
 bruh
 
 
 LocalDB
--------
+-------------
 
 
 bruh
@@ -88,14 +88,14 @@ bruh
 
 
 Text to speech
---------------
+-------------
 
 bruh
 
 
 
 Utils
------
+-------------
 
 `utils/run_tensorboard.py` is easy to use wrapper starting Tensorboard with model folder
 
