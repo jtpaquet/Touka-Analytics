@@ -45,3 +45,8 @@ ROBOT
 Faire un ToukaBot qui parle comme un touka avec reconnaissance vocale et qui te répond comme un touka.
 Arduino + speaker
 
+AUTRE
+=====
+
+- Hoster le dictionnaire des toukas
+
