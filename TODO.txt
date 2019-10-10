@@ -11,6 +11,8 @@ ANALYTICS
 =========
 - Faire marcher touka_analytics.py avec la database
 X Faire marcher recherche_mot.py avec la database
+- Faire un pie chart dnas recherche_mot_DB.py
+- Animer les graphs/charts, les rendre plus interactives
 
 APP
 ===
