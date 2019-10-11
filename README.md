@@ -74,8 +74,13 @@ LocalDB
 -------------
 
 
-bruh
+```cmd_atlas_db.txt``` - commande pour exporter la base de données locale dans le cloud et importer la base de données locale en .json
 
+``df.csv`` - dataframe pour la création des statistique sur la conversation
+
+``members.json`` - base de donnéese des membres de Touka
+
+``messages.json`` - base de donnéese des messages de Touka
 
 
 Text to speech

@@ -16,7 +16,7 @@ X Faire marcher recherche_mot.py avec la database
 - Hoster les photos pour aller chercher les photos de touka
 - Ajouter les reactions
 - Changer l'activité par une moyenne mobile ouais ouais
-- Faire un script pour créer dataframe et un autre pour le lire pcq c'est trop lourd
+X Faire un script pour créer dataframe et un autre pour le lire pcq c'est trop lourd
 
 APP
 ===
