@@ -13,11 +13,17 @@ X Faire marcher touka_analytics.py avec la database
 X Faire marcher recherche_mot.py avec la database
 - Faire un pie chart dans recherche_mot_DB.py
 - Animer les graphs/charts, les rendre plus interactives
+  - https://mode.com/blog/python-interactive-plot-libraries
+  - Plotly, ranged slider
+  - Bokeh
+  - https://towardsdatascience.com/the-next-level-of-data-visualization-in-python-dd6e99039d5e
+  - Highlighting data using the legend, https://realpython.com/python-data-visualization-bokeh/
 - Hoster les photos pour aller chercher les photos de touka
 - Ajouter les reactions
 - Changer l'activité par une moyenne mobile ouais ouais
 X Faire un script pour créer dataframe et un autre pour le lire pcq c'est trop lourd
 - ToukaAnalytics reste cancéreux
+- Faire un radar plot pour chaque touka
 
 APP
 ===
