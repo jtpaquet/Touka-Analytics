@@ -1,4 +1,4 @@
-UTILS
+﻿UTILS
 =====
 
 - Trouver comment gérer les \\ dans le convertisseur
@@ -9,10 +9,13 @@ X LoadDB
 
 ANALYTICS
 =========
-- Faire marcher touka_analytics.py avec la database
+X Faire marcher touka_analytics.py avec la database
 X Faire marcher recherche_mot.py avec la database
-- Faire un pie chart dnas recherche_mot_DB.py
+- Faire un pie chart dans recherche_mot_DB.py
 - Animer les graphs/charts, les rendre plus interactives
+- Hoster les photos pour aller chercher les photos de touka
+- Ajouter les reactions
+- Changer l'activité par une moyenne mobile ouais ouais
 
 APP
 ===

@@ -1,10 +1,8 @@
-import json
-import codecs
 import datetime
+import pandas as pd
+from pymongo import MongoClient
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
-import numpy as np
-from matplotlib import dates
 
 
 def activite(temps, messages, dx=25):
@@ -26,123 +24,105 @@ def activite_interp(temps, messages, dx=3600):
 
 plt.style.use('seaborn-paper')
 
-noms_touka = ['Jé Talbot', 'Roulo', 'Lakasse', 'Pierre-Poom', 'Krostif', 'Jirome', 'Vinssan', 'Godbout']
+client = MongoClient("localhost", 27017)
+db = client['ToukaAnalytics']
 
-data = json.load(codecs.open('touka.json', 'r', 'utf-8'))  # Pour avoir les caractères spéciaux
+members = db['members']
+messages = db['messages']
 
-map_touka = dict(zip([participant['name'] for participant in data['participants']], noms_touka))
+data = []
 
-comptes = [sum([message['sender_name'] == participant['name'] for message in data['messages']]) for participant in
-           data['participants']]
+for member in members.find({}):
+    name = member['name']
+    # messages.aggregate( [ { "$project" : { 'content' : 1 , 'date' : 1 } } ] )
+    query_txt = {'$and': [ {'author': name}, {'content': {'$exists': True, '$ne': None } } ] }
+    query_react = {'$and': [ {'author': name}, {'reaction': {'$exists': True, '$ne': None } } ] }
 
-timestamps_tout = [float(message['timestamp_ms'] / 1000) for message in data['messages']]
+    member_messages = { msg['date'] : msg['content'] for msg in messages.find(query_txt) }
+    member_types = [ msg['type'] for msg in messages.find() ]
+    member_reacts = [ msg['reaction'] for msg in messages.find(query_react) ]
+    n_msg = messages.find(query_txt).count()
 
-messages_participant = [[message for message in data['messages'] if message['sender_name'] == participant['name']] for
-                        participant in
-                        data['participants']]
+    data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
 
-nb_mess = [len(messages) for messages in messages_participant]
-print(nb_mess)
-
-# messages_participant: [[list de messages à jé talbot], [liste de message à roulo], ... ]
-
-timestamps = [[float(message['timestamp_ms'] / 1000) for message in participant] for participant in
-              messages_participant]  # [s]
+df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'Type', 'Reaction', 'msg_count'))
+df = df.set_index('Name')
 
 nb_characters = []
 nb_characters_total = []
-for participant in messages_participant:
+for member in df.index:
     s = 0
     s_total = []
-    for message in participant:
-        try:
-            if message['content'][-17:] != "envoyé une photo.":
-                s += len(message['content'])
-        except:
-            ValueError
+    for msg in df.loc[member, 'txt_msg'].values():
+        s += len(msg)
         s_total.append(s)
     nb_characters.append(s_total)
     nb_characters_total.append(s)
 
-ratio_char_msg = [char / msg for char, msg in zip(nb_characters_total, nb_mess)]
+df['n_char'] = nb_characters
+df['n_char_total'] = nb_characters_total
 
-nb_messages = dict(zip([participant['name'] for participant in data['participants']], comptes))
-toukas_name_sorted = sorted(nb_messages.items(), key=lambda kv: kv[1])
-nb_messages = dict(sorted(nb_messages.items(), key=lambda kv: kv[1])[::-1])
+df['ratio_char_msg'] = df['n_char_total'] / df['msg_count']
 
-nb_messages = dict((map_touka[key], value) for (key, value) in nb_messages.items())
-
-plt.bar(nb_messages.keys(), nb_messages.values())
+plt.bar(df.index, df['msg_count'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Nombre de messages total')
 plt.title('Nombre de messages total envoyés sur Touka')
-plt.savefig('Figures/bar_nb_messages_total.png')
-# plt.show()
+plt.savefig('../figures/bar_nb_messages_total.png')
+plt.show()
 plt.clf()
 
-plt.bar(noms_touka, nb_characters_total)
+plt.bar(df.index, df['n_char_total'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Nombre de caractères écrits total')
 plt.title('Nombre de caractères total envoyés sur Touka selon les toukas')
-plt.savefig('Figures/bar_nb_char_total.png')
-# plt.show()
+plt.savefig('../figures/bar_nb_char_total.png')
+plt.show()
 plt.clf()
 
-plt.bar(noms_touka, ratio_char_msg)
+plt.bar(df.index, df['ratio_char_msg'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Ratio')
 plt.title('Ratio du nombre de caractères écrits par message sur Touka selon les toukas')
-plt.savefig('Figures/bar_ratio_char_msg.png')
-# plt.show()
+plt.savefig('../figures/bar_ratio_char_msg.png')
+plt.show()
 plt.clf()
 
-for i in range((len(timestamps))):
-    date_list = [datetime.datetime.fromtimestamp(t) for t in timestamps[i]]  # converted
-    plt.plot(date_list, range(len(timestamps[i]))[::-1], label=noms_touka[i])
+for name in df.index:
+    member_messages = df.loc[name, 'txt_msg']
+    plt.plot(member_messages.keys(), range(len(member_messages.keys()))[::-1], label=name)
 
 plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Nombre de messages')
 plt.title('Nombre de messages total dans le temps par touka')
-plt.savefig('Figures/nb_messages_dans_le_temps_par_touka.png')
-# plt.show()
+plt.savefig('../figures/nb_messages_dans_le_temps_par_touka.png')
+plt.show()
 plt.clf()
 
-for i in range((len(timestamps))):
-    date_list = [datetime.datetime.fromtimestamp(t) for t in timestamps[i]]  # converted
-    plt.plot(date_list, nb_characters[i][::-1], label=noms_touka[i])
+for name in df.index:
+    member_chars = df.loc[name, 'n_char']
+    plt.plot(member_chars, range(len(member_chars))[::-1], label=name)
 
 plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Nombre de caractères')
 plt.title('Nombre de caractères total dans le temps par touka')
-plt.savefig('Figures/nb_caractères_dans_le_temps_par_touka.png')
-# plt.show()
+plt.savefig('../figures/nb_caractères_dans_le_temps_par_touka.png')
+plt.show()
 plt.clf()
 
-for i in range((len(timestamps))):
-    date_list = [datetime.datetime.fromtimestamp(t) for t in timestamps[i]]  # converted
-    ratio = [char / msg for char, msg in zip(nb_characters[i][1:], range(1, len(timestamps[i])))]   # Pour éviter la division par 0
-    plt.plot(date_list[101:], ratio[::-1][100:], label=noms_touka[i])   # À partir du 100e message
-
-plt.gcf().autofmt_xdate()
-plt.legend()
-plt.ylabel('Nombre de messages')
-plt.title('Ratio du nombre de caractères écrits par message sur Touka selon les toukas\nà partir du 100e message')
-plt.savefig('Figures/ratio_char_msg_dans_le_temps_par_touka.png')
-# plt.show()
-plt.clf()
-
-for i in range((len(timestamps))):
-    temps, activite_ = activite_interp(timestamps[i], range(len(timestamps[i])),
+for name in df.index:
+    timestamps = [datetime.timestamp(date) for date in df.loc[name, 'tzt_msg'].keys()]
+    temps, activite_ = activite_interp(timestamps, range(len(timestamps)),
                                        dx=3600 * 24 * 30)  # Moyenné sur 1 mois
     date_list = [datetime.datetime.fromtimestamp(t) for t in temps]  # converted
-    plt.plot(date_list, activite_, label=noms_touka[i])
+    plt.plot(date_list, activite_, label=name)
 
 plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Activité [messages/jour]')
 plt.title('Activité dans le temps par touka\nmoyenné sur un mois')
-plt.savefig('Figures/activite_dans_le_temps_par_touka_sans_total.png')
-# plt.show()
+plt.savefig('../figures/activite_dans_le_temps_par_touka_sans_total.png')
+plt.show()
 plt.clf()

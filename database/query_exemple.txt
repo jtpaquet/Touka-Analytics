@@ -1,1 +1,11 @@
 {$and: [{content: {$regex : '^inks', $options: 'i'}}, {author: 'Jérémy Talbot-Pâquet'}] }
+
+{
+ '$and': [
+ {
+'author': 'Jérémy Talbot-Pâquet'
+}, {'content': {'$exists': True, '$ne': None
+ } 
+} 
+] 
+}
