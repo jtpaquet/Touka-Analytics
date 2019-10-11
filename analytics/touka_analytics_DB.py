@@ -2,8 +2,12 @@ import datetime
 import pandas as pd
 from pymongo import MongoClient
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.interpolate import interp1d
+import os
 
+dirname = os.path.dirname(__file__)
+fig_dir = os.path.join(dirname, '../figure/')
 
 def activite(temps, messages, dx=25):
     activite = [(messages[i + dx] - messages[i]) * 3600 / -(temps[i + dx] - temps[i]) for i in
@@ -68,7 +72,7 @@ plt.bar(df.index, df['msg_count'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Nombre de messages total')
 plt.title('Nombre de messages total envoyés sur Touka')
-plt.savefig('../figures/bar_nb_messages_total.png')
+plt.savefig(fig_dir + 'bar_nb_messages_total.png')
 plt.show()
 plt.clf()
 
@@ -76,7 +80,7 @@ plt.bar(df.index, df['n_char_total'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Nombre de caractères écrits total')
 plt.title('Nombre de caractères total envoyés sur Touka selon les toukas')
-plt.savefig('../figures/bar_nb_char_total.png')
+plt.savefig(fig_dir + 'bar_nb_char_total.png')
 plt.show()
 plt.clf()
 
@@ -84,7 +88,7 @@ plt.bar(df.index, df['ratio_char_msg'])
 plt.xticks(rotation=45, ha='right', size=10)
 plt.ylabel('Ratio')
 plt.title('Ratio du nombre de caractères écrits par message sur Touka selon les toukas')
-plt.savefig('../figures/bar_ratio_char_msg.png')
+plt.savefig(fig_dir + 'bar_ratio_char_msg.png')
 plt.show()
 plt.clf()
 
@@ -96,7 +100,7 @@ plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Nombre de messages')
 plt.title('Nombre de messages total dans le temps par touka')
-plt.savefig('../figures/nb_messages_dans_le_temps_par_touka.png')
+plt.savefig(fig_dir + 'nb_messages_dans_le_temps_par_touka.png')
 plt.show()
 plt.clf()
 
@@ -108,7 +112,7 @@ plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Nombre de caractères')
 plt.title('Nombre de caractères total dans le temps par touka')
-plt.savefig('../figures/nb_caractères_dans_le_temps_par_touka.png')
+plt.savefig(fig_dir + 'nb_caractères_dans_le_temps_par_touka.png')
 plt.show()
 plt.clf()
 
@@ -123,6 +127,6 @@ plt.gcf().autofmt_xdate()
 plt.legend()
 plt.ylabel('Activité [messages/jour]')
 plt.title('Activité dans le temps par touka\nmoyenné sur un mois')
-plt.savefig('../figures/activite_dans_le_temps_par_touka_sans_total.png')
+plt.savefig(fig_dir + 'activite_dans_le_temps_par_touka_sans_total.png')
 plt.show()
 plt.clf()
