@@ -23,6 +23,7 @@ X Faire marcher recherche_mot.py avec la database
 - Changer l'activité par une moyenne mobile ouais ouais
 X Faire un script pour créer dataframe et un autre pour le lire pcq c'est trop lourd
 - ToukaAnalytics reste cancéreux
+- Faire un radar plot pour chaque touka
 
 APP
 ===
