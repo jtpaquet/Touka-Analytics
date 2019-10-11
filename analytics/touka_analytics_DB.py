@@ -1,4 +1,3 @@
-import datetime
 import pandas as pd
 from pymongo import MongoClient
 import numpy as np
@@ -22,15 +21,16 @@ for member in members.find({}):
     query_txt = {'$and': [ {'author': name}, {'content': {'$exists': True, '$ne': None } } ] }
     query_react = {'$and': [ {'author': name}, {'reaction': {'$exists': True, '$ne': None } } ] }
 
-    member_messages = [msg['content'] for msg in messages.find(query_txt) ]
+    member_messages = [ msg['content'] for msg in messages.find(query_txt) ]
     member_dates = [ msg['date'] for msg in messages.find(query_txt) ]
+    member_timestamps = [ msg['timestamp'] for msg in messages.find(query_txt) ]
     member_types = [ msg['type'] for msg in messages.find() ]
     member_reacts = [ msg['reaction'] for msg in messages.find(query_react) ]
     n_msg = messages.find(query_txt).count()
 
-    data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'date_msg' : member_dates, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
+    data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'msg_timestamps' : member_timestamps, 'date_msg' : member_dates, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
 
-df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'date_msg', 'Type', 'Reaction', 'msg_count'))
+df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'msg_timestamps', 'date_msg', 'Type', 'Reaction', 'msg_count'))
 df = df.set_index('Name')
 
 nb_characters = []

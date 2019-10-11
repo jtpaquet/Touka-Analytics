@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -14,11 +15,11 @@ def activite(temps, messages, dx=25):
 
 def activite_interp(temps, messages, dx=3600):
     interp = interp1d(temps, messages)
-    print("temps:", temps)
+    # print("temps:", temps)
     x_new = np.arange(temps[0] - dx, temps[-1] + dx, -dx)
-    print("x_new:", x_new)
+    # print("x_new:", x_new)
     activite = [(interp(x - dx) - interp(x)) * 3600 * 24 / dx for x in x_new]  # Messages par jour
-    print("activité:", activite)
+    # print("activité:", activite)
     return x_new, activite
 
 touka_dir = os.path.dirname(os.path.dirname(__file__))
@@ -54,8 +55,8 @@ plt.savefig(os.path.join(fig_dir, 'bar_ratio_char_msg.png'))
 plt.clf()
 
 for name in df.index:
-    dates = df.loc[name, 'date_msg']
-
+    timestamps = df.loc[name, 'msg_timestamps']
+    dates = [datetime.fromtimestamp(int(timestamp)/1000) for timestamp in timestamps[1:-1].split(', ')]
     plt.plot(dates, range(len(dates),0,-1), label=name)
 
 plt.gcf().autofmt_xdate()
@@ -68,7 +69,8 @@ plt.clf()
 
 for name in df.index:
     member_chars = df.loc[name, 'n_char']
-    plt.plot(member_chars, range(len(member_chars))[::-1], label=name)
+    member_chars = [int(n_char) for n_char in member_chars[1:-1].split(', ')]
+    plt.plot(member_chars, range(len(member_chars),0,-1), label=name)
 
 plt.gcf().autofmt_xdate()
 plt.legend()
@@ -79,10 +81,11 @@ plt.savefig(os.path.join(fig_dir, 'nb_caractères_dans_le_temps_par_touka.png'))
 plt.clf()
 
 for name in df.index:
-    timestamps = [datetime.timestamp(date) for date in df.loc[name, 'tzt_msg'].keys()]
+    timestamps = df.loc[name, 'msg_timestamps']
+    timestamps = [int(timestamp) for timestamp in timestamps[1:-1].split(', ')]
     temps, activite_ = activite_interp(timestamps, range(len(timestamps)),
                                        dx=3600 * 24 * 30)  # Moyenné sur 1 mois
-    date_list = [datetime.datetime.fromtimestamp(t) for t in temps]  # converted
+    date_list = [datetime.fromtimestamp(t/1000) for t in temps]  # converted
     plt.plot(date_list, activite_, label=name)
 
 plt.gcf().autofmt_xdate()
