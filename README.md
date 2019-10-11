@@ -14,7 +14,8 @@ Table of Contents
 9. [LocalDB](#localDB)
 10. [Text to speech](#text-to-speech)
 11. [Utils](#utils)
-12. [Changelog](#changelog)
+12. [Venv](#venv)
+13. [Changelog](#changelog)
 
 Introduction
 -------------
@@ -30,9 +31,9 @@ Setup
 Analytics
 -------------
 
-``touka_analytics.py`` - génère des statistiques sur les membres de Toukas.
+``touka_analytics_DB.py`` - génère des statistiques sur les membres de Toukas à partir de la database.
 
-``recherche_mot.py`` - génère des statistiques sur les mots dits dans la conversation.
+``recherche_mot_DB.py`` - génère des statistiques sur les mots dits dans la conversation à partir de la database.
 
 
 App
@@ -46,6 +47,9 @@ Archives
 
 ``vieux_touka.json`` - document utilisé pour produire les figures dans (#figure).
 
+``touka_analytics.py`` - génère des statistiques sur les membres de Toukas directement à partir du json.
+
+``recherche_mot.py`` - génère des statistiques sur les mots dits dans la conversation directement à partir du json.
 
 Chatbot
 -------------
@@ -88,6 +92,10 @@ Utils
 
 `utils/list.py` - liste tous les attributs possibles d'un message.
 
+Venv
+------
+
+Contient l'environnement virtuel pour installer le package
 
 
 Changelog
