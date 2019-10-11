@@ -23,7 +23,7 @@ def activite_interp(temps, messages, dx=3600):
     return x_new, activite
 
 touka_dir = os.path.dirname(os.path.dirname(__file__))
-fig_dir = os.path.join(touka_dir, 'figures')
+fig_dir = os.path.join(touka_dir, 'figures2')
 localDB_dir = os.path.join(touka_dir, 'localDB')
 
 data = pd.read_csv(os.path.join(localDB_dir, "df.csv") )
@@ -70,7 +70,9 @@ plt.clf()
 for name in df.index:
     member_chars = df.loc[name, 'n_char']
     member_chars = [int(n_char) for n_char in member_chars[1:-1].split(', ')]
-    plt.plot(member_chars, range(len(member_chars),0,-1), label=name)
+    timestamps = df.loc[name, 'msg_timestamps']
+    dates = [datetime.fromtimestamp(int(timestamp)/1000) for timestamp in timestamps[1:-1].split(', ')]
+    plt.plot(dates, member_chars[::-1], label=name)
 
 plt.gcf().autofmt_xdate()
 plt.legend()
@@ -82,10 +84,10 @@ plt.clf()
 
 for name in df.index:
     timestamps = df.loc[name, 'msg_timestamps']
-    timestamps = [int(timestamp) for timestamp in timestamps[1:-1].split(', ')]
+    timestamps = [int(timestamp)/1000 for timestamp in timestamps[1:-1].split(', ')]
     temps, activite_ = activite_interp(timestamps, range(len(timestamps)),
                                        dx=3600 * 24 * 30)  # Moyenné sur 1 mois
-    date_list = [datetime.fromtimestamp(t/1000) for t in temps]  # converted
+    date_list = [datetime.fromtimestamp(t) for t in temps]  # converted
     plt.plot(date_list, activite_, label=name)
 
 plt.gcf().autofmt_xdate()
