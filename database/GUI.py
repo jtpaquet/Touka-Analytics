@@ -63,7 +63,9 @@ class Gui:
         
  
 class Gui_training:
-    def __init__(self, master):
+    def __init__(self, master, db):
+
+        self.db = db
                 
         # Main frame
         self.mainFrame = tk.Frame(master)
@@ -83,14 +85,16 @@ class Gui_training:
         self.following_messageFrame = tk.Frame(self.mainFrame)
         self.following_messageFrame.pack()
         self.following__messageLabel= tk.Label(self.following_messageFrame, text="Réponses")
-        self.following__messageLabel.pack()
+        self.following__messageLabel.grid()
+        self.following_messageCanvas = []
+        self.score_box = []
         for i in range(5):
-            following_messageCanvas = tk.Label(self.following_messageFrame, text="Réponse "+str(i+1))
-            following_messageCanvas.pack(side=tk.LEFT)
-            score_box = tk.Label(self.following_messageFrame, text="Score")
-            score_box.pack(side=tk.RIGHT)
+            self.following_messageCanvas.append(tk.Label(self.following_messageFrame, text="Réponse "+str(i+1)))
+            self.following_messageCanvas[i].grid(row=i, column=0)
+            self.score_box.append(tk.Label(self.following_messageFrame, text="Score"))
+            self.score_box[i].grid(row=i, column=1)
         self.no_msg_Button = tk.Button(self.following_messageFrame, text='Aucun', command=self.buttonCmd)
-        self.no_msg_Button.pack()
+        self.no_msg_Button.grid()
         
         # Other messages
         self.other_messageFrame = tk.Frame(self.mainFrame)
@@ -98,7 +102,7 @@ class Gui_training:
         self.other_messageLabel= tk.Label(self.other_messageFrame, text="Autre manière d'écrire le message")
         self.other_messageLabel.pack()
         self.input_messageCanvas = tk.Label(self.following_messageFrame, text="<Nouvelle manière>")
-        self.input_messageCanvas.pack(side=tk.LEFT)
+        self.input_messageCanvas.grid
         
         
         # Next message
