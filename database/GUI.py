@@ -69,59 +69,65 @@ class Gui_labelling:
                 
         # Main frame
         self.mainFrame = tk.Frame(master)
-        self.mainFrame.pack(fill=tk.BOTH, expand=False)
+        self.mainFrame.pack(expand=True)
         self.messageFrame = tk.Frame(self.mainFrame)
-        self.messageFrame.grid(row=0, columnspan=2)
+        self.messageFrame.grid(row=0, columnspan=2, sticky='n')
+        self.messageFrame.grid_configure(sticky="nsew")
+
 
         # Current message
         self.current_messageFrame = tk.Frame(self.mainFrame)
         self.current_messageFrame.grid(row=1, columnspan=2)
         self.current_messageLabel= tk.Label(self.current_messageFrame, text="Message")
-        self.current_messageLabel.pack(fill=tk.X, expand=False)
+        self.current_messageLabel.pack()
         self.current_message = tk.Text(self.current_messageFrame, height=5, width=60)
         self.current_message.insert(tk.END, "Message provenant de touka")
         self.current_message.pack()
         
         # Following messages
         self.following_messageFrame = tk.Frame(self.mainFrame)
-        self.following_messageFrame.grid(row=3, column=0, sticky='w')
+        self.following_messageFrame.grid(row=3, column=0, sticky='w', padx=20, pady=20)
         self.following_messageLabel= tk.Label(self.following_messageFrame, text="Réponses")
         self.following_messageLabel.grid(row=0, columnspan=2)
         self.following_messageCanvas = []
         self.following_box = []
+        self.following_var = []
         for i in range(5):
             self.following_messageCanvas.append(tk.Text(self.following_messageFrame, height=2, width=40))
             self.following_messageCanvas[i].insert(tk.END, "Réponse "+str(i+1))
             self.following_messageCanvas[i].grid(row=i+1, column=0)
-            self.following_box.append(tk.Checkbutton(self.following_messageFrame, text=""))
+            self.following_var.append(tk.IntVar())
+            self.following_box.append(tk.Checkbutton(self.following_messageFrame, variable=self.following_var[i]))
             self.following_box[i].grid(row=i+1, column=1)
 
         # Preceding messages
         self.preceding_messageFrame = tk.Frame(self.mainFrame)
-        self.preceding_messageFrame.grid(row=3, column=1, sticky='e')
+        self.preceding_messageFrame.grid(row=3, column=1, sticky='e', padx=20, pady=20)
         self.preceding_messageLabel= tk.Label(self.preceding_messageFrame, text="Réponse à")
         self.preceding_messageLabel.grid(row=0, columnspan=2)
         self.preceding_messageCanvas = []
         self.preceding_box = []
+        self.preceding_var = []
         for i in range(5):
             self.preceding_messageCanvas.append(tk.Text(self.preceding_messageFrame, height=2, width=40))
             self.preceding_messageCanvas[i].insert(tk.END, "Réponse à "+str(i+1))
             self.preceding_messageCanvas[i].grid(row=i+1, column=0)
-            self.preceding_box.append(tk.Checkbutton(self.preceding_messageFrame, text=""))
+            self.preceding_var.append(tk.IntVar())
+            self.preceding_box.append(tk.Checkbutton(self.preceding_messageFrame, variable = self.preceding_var[i]))
             self.preceding_box[i].grid(row=i+1, column=1)
         
         # Other messages
         self.other_messageFrame = tk.Frame(self.mainFrame)
-        self.other_messageFrame.grid(row=4, columnspan=2)
+        self.other_messageFrame.grid(row=4, columnspan=2, padx=10, pady=10)
         self.other_messageLabel= tk.Label(self.other_messageFrame, text="Autre manière d'écrire le message")
         self.other_messageLabel.grid()
-        self.input_message = tk.Text(self.other_messageFrame, height=3, width=60)
+        self.input_message = tk.Text(self.other_messageFrame, height=5, width=60)
         self.input_message.grid()
         
         
         # Next message
         self.next_messageFrame = tk.Frame(self.mainFrame)
-        self.next_messageFrame.grid(row=5, columnspan=2)
+        self.next_messageFrame.grid(row=5, columnspan=2, sticky='s')
         self.next_msg_Button = tk.Button(self.next_messageFrame, text='Confirmer et passer au message suivant', command=self.nextMsgCmd)
         self.next_msg_Button.pack()
         

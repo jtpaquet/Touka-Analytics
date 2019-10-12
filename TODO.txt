@@ -35,7 +35,8 @@ APP
 X Hoster la DB sur Atlas / google cloud
 - Mettre l'app sur ToukaAnalytics
 - Faire un UI pour le labelling de data/ajout de data/tokenization
-
+	X Organisation des widgets
+	- Logique
 CHATBOT
 =======
 
