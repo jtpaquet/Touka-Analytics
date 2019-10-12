@@ -105,9 +105,9 @@ class Gui_labelling:
         self.messageFrame.grid(row=0, columnspan=3, sticky='n')
         self.current_messageFrame = tk.Frame(self.messageFrame)
         self.current_messageFrame.grid(row=0, column=0)
-        self.current_messageLabel= tk.Label(self.current_messageFrame, text="Message #{}".format(self.msg_n))
+        self.current_messageLabel= tk.Label(self.current_messageFrame, text="Message #{}".format(self.msg_n), width=20)
         self.current_messageLabel.grid(row=0, columnspan=2)
-        self.current_authorLabel= tk.Label(self.current_messageFrame, text="{}:".format(self.df.loc[self.msg_n, 'author']))
+        self.current_authorLabel= tk.Label(self.current_messageFrame, text="{}:".format(self.df.loc[self.msg_n, 'author']), width=12)
         self.current_authorLabel.grid(row=1, column=0)
         self.current_message = tk.Text(self.current_messageFrame, height=5, width=30, wrap=tk.WORD)
         self.current_message.insert(tk.END, self.df.loc[self.msg_n, 'txt_msg'])
@@ -122,8 +122,11 @@ class Gui_labelling:
         self.preceding_messageCanvas = []
         self.preceding_box = []
         self.preceding_var = []
+        self.preceding_author_var = []
         for i in range(5):
-            self.preceding_authorLabel.append(tk.Label(self.preceding_messageFrame, text="{}:".format(self.df.loc[self.msg_n-(i+1), 'author'])))
+            self.preceding_author_var.append(tk.StringVar())
+            self.preceding_author_var[i].set("{}:".format(self.df.loc[self.msg_n-(i+1), 'author']))
+            self.preceding_authorLabel.append(tk.Label(self.preceding_messageFrame, textvariable=self.preceding_author_var[i], width=12))
             self.preceding_authorLabel[i].grid(row=i+1, column=0)
             self.preceding_messageCanvas.append(tk.Text(self.preceding_messageFrame, height=3, width=40, wrap=tk.WORD))
             self.preceding_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n-(i+1), 'txt_msg'])
@@ -141,8 +144,11 @@ class Gui_labelling:
         self.following_messageCanvas = []
         self.following_box = []
         self.following_var = []
+        self.following_author_var = []
         for i in range(5):
-            self.following_authorLabel.append(tk.Label(self.following_messageFrame, text="{}:".format(self.df.loc[self.msg_n+(i+1), 'author'])))
+            self.following_author_var.append(tk.StringVar())
+            self.following_author_var[i].set("{}:".format(self.df.loc[self.msg_n+(i+1), 'author']))
+            self.following_authorLabel.append(tk.Label(self.following_messageFrame, textvariable=self.following_author_var[i], width=12))
             self.following_authorLabel[i].grid(row=i+1, column=0)
             self.following_messageCanvas.append(tk.Text(self.following_messageFrame, height=3, width=40, wrap=tk.WORD))
             self.following_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n+(i+1), 'txt_msg'])
@@ -188,9 +194,9 @@ class Gui_labelling:
         # Next message
         self.buttonsFrame = tk.Frame(self.mainFrame)
         self.buttonsFrame.grid(row=5, columnspan=3, sticky='s')
-        self.next_msg_Button = tk.Button(self.buttonsFrame, text='Confirmer\net passer au\nmessage #{}'.format(self.next_msg), command=self.nextMsgCmd)
+        self.next_msg_Button = tk.Button(self.buttonsFrame, text='Confirmer\net passer au\nmessage #{}'.format(self.next_msg), command=self.nextMsgCmd, width=20)
         self.next_msg_Button.grid(row=0, column=0, padx=10)
-        self.rand_msg_Button = tk.Button(self.buttonsFrame, text='Confirmer\net passer à un\nmessage aléatoire', command=self.randMsgCmd)
+        self.rand_msg_Button = tk.Button(self.buttonsFrame, text='Confirmer\net passer à un\nmessage aléatoire', command=self.randMsgCmd, width=20)
         self.rand_msg_Button.grid(row=0, column=1, padx=10)
         # Message selection
         self.selection_messageFrame = tk.Frame(self.buttonsFrame)
@@ -231,6 +237,7 @@ class Gui_labelling:
         self.log_label()
         self.update_msg()
         self.next_msg = self.msg_n + 10
+        self.next_msg_Button.config(text='Confirmer\net passer au\nmessage #{}'.format(self.next_msg))
     
 
     def log_label(self):
@@ -279,28 +286,19 @@ class Gui_labelling:
         self.random_common_msg = random.sample(self.common_reply, 5)
 
         for i in range(5):
-            self.preceding_authorLabel[i].config(text="{}:".format(self.df.loc[self.msg_n-(i+1), 'author']))
+            self.preceding_author_var[i].set("{}:".format(self.df.loc[self.msg_n-(i+1), 'author']))
             self.preceding_messageCanvas[i].delete("1.0", "end")
             self.preceding_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n-(i+1), 'txt_msg'])
-            self.preceding_messageCanvas[i].grid(row=i+1, column=0)
-            self.preceding_var.append(tk.IntVar())
-            self.preceding_box.append(tk.Checkbutton(self.preceding_messageFrame, variable = self.preceding_var[i]))
-            self.preceding_box[i].grid(row=i+1, column=1)
+            self.preceding_var[i].set(False)
 
-            self.following_authorLabel[i].config(text="{}:".format(self.df.loc[self.msg_n+(i+1), 'author']))
+            self.following_author_var[i].set("{}:".format(self.df.loc[self.msg_n+(i+1), 'author']))
             self.following_messageCanvas[i].delete("1.0", "end")
             self.following_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n+(i+1), 'txt_msg'])
-            self.following_messageCanvas[i].grid(row=i+1, column=0)
-            self.following_var.append(tk.IntVar())
-            self.following_box.append(tk.Checkbutton(self.following_messageFrame, variable=self.following_var[i]))
-            self.following_box[i].grid(row=i+1, column=1)
+            self.following_var[i].set(False)
 
             self.common_following_messageCanvas[i].delete("1.0", "end")
             self.common_following_messageCanvas[i].insert(tk.END, self.random_common_msg[i])
-            self.common_following_messageCanvas[i].grid(row=i+1, column=0)
-            self.common_following_var.append(tk.IntVar())
-            self.common_following_box.append(tk.Checkbutton(self.common_following_messageFrame, variable=self.common_following_var[i]))
-            self.common_following_box[i].grid(row=i+1, column=1)
-        
+            self.common_following_var[i].set(False)
+
         self.input_input.delete("1.0", "end")
         self.input_reply.delete("1.0", "end")
