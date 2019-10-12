@@ -36,9 +36,12 @@ X Hoster la DB sur Atlas / google cloud
 - Mettre l'app sur ToukaAnalytics
 - Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Organisation des widgets
-	- Logique
-	- Ajouter un widget sélection de message avec un idx
-
+	X Logique
+	X Ajouter un widget sélection de message avec un idx
+	X Formatter le text pour qu'il coupe aux espaces et non dans le mot (wrap=word)
+	X Ajouter les inputs customs au log
+	- Ajouter l'auteur du message
+	- Faire un loading 
 
 CHATBOT
 =======
