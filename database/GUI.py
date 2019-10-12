@@ -1,3 +1,6 @@
+import os
+import random
+import pandas as pd
 import tkinter as tk
 from tkinter import ttk
 
@@ -66,43 +69,55 @@ class Gui_labelling:
     def __init__(self, master, db):
 
         self.db = db
-                
+
+        self.touka_dir = os.path.dirname(os.path.dirname(__file__))
+
+        self.input_file = open(os.path.join(self.touka_dir, 'chatbot/input.from'), 'a+')
+        self.reply_file = open(os.path.join(self.touka_dir, 'chatbot/reply.to'), 'a+')
+
+        self.messages = self.db['messages']
+        self.data = {}
+        for msg in self.messages.find({'content': {'$exists': True, '$ne': None } }):
+            self.data[msg['timestamp']] = msg['content']
+        self.df = { 'timestamp' : list(self.data.keys()), 'txt_msg' : list(self.data.values()) }
+        self.df = pd.DataFrame.from_dict(self.df)
+        self.df = self.df.sort_values(by='timestamp', ascending=0)
+        print(self.df.loc[0, 'txt_msg'])
+
+        self.msg_n = random.randint(5, len(self.df.index)-5)
+
+        self.common_reply = ["moua", "ouais ouais supère", "J'aime bien le froumage", "inks", "ceci être bruh moment", "sa ses vraies", "ceci être ma naturelle position", "oker", "gros jeu", "Fais pas ta tapet", "Criss de centriste", "Ses vraies", "Ferme ta criss de gueule", "Tayeule gros fif", "T'es juste une moumoune"]
+
         # Main frame
         self.mainFrame = tk.Frame(master)
         self.mainFrame.pack(expand=True)
         self.messageFrame = tk.Frame(self.mainFrame)
-        self.messageFrame.grid(row=0, columnspan=2, sticky='n')
+        self.messageFrame.grid(row=0, columnspan=3, sticky='n')
         self.messageFrame.grid_configure(sticky="nsew")
-
 
         # Current message
         self.current_messageFrame = tk.Frame(self.mainFrame)
-        self.current_messageFrame.grid(row=1, columnspan=2)
-        self.current_messageLabel= tk.Label(self.current_messageFrame, text="Message")
+        self.current_messageFrame.grid(row=1, column=0)
+        self.current_messageLabel= tk.Label(self.current_messageFrame, text="Message #{}".format(self.msg_n))
         self.current_messageLabel.pack()
-        self.current_message = tk.Text(self.current_messageFrame, height=5, width=60)
-        self.current_message.insert(tk.END, "Message provenant de touka")
+        self.current_message = tk.Text(self.current_messageFrame, height=5, width=40)
+        self.current_message.insert(tk.END, self.df.loc[self.msg_n, 'txt_msg'])
         self.current_message.pack()
-        
-        # Following messages
-        self.following_messageFrame = tk.Frame(self.mainFrame)
-        self.following_messageFrame.grid(row=3, column=0, sticky='w', padx=20, pady=20)
-        self.following_messageLabel= tk.Label(self.following_messageFrame, text="Réponses")
-        self.following_messageLabel.grid(row=0, columnspan=2)
-        self.following_messageCanvas = []
-        self.following_box = []
-        self.following_var = []
-        for i in range(5):
-            self.following_messageCanvas.append(tk.Text(self.following_messageFrame, height=2, width=40))
-            self.following_messageCanvas[i].insert(tk.END, "Réponse "+str(i+1))
-            self.following_messageCanvas[i].grid(row=i+1, column=0)
-            self.following_var.append(tk.IntVar())
-            self.following_box.append(tk.Checkbutton(self.following_messageFrame, variable=self.following_var[i]))
-            self.following_box[i].grid(row=i+1, column=1)
+        # Message selection
+        self.selection_messageFrame = tk.Frame(self.mainFrame)
+        self.selection_messageFrame.grid(row=1, column=1)
+        self.selection_Label = tk.Label(self.selection_messageFrame, text="Sélection du message")
+        self.selection_Label.grid(row=0, columnspan=3)
+        self.selectionLabel = tk.Label(self.selection_messageFrame, text="msg# :")
+        self.selectionLabel.grid(row=1, column=0, padx=2)
+        self.selectionInput = tk.Entry(self.selection_messageFrame, width=10)
+        self.selectionInput.grid(row=1, column=1, padx=2)
+        self.selectionButton = tk.Button(self.selection_messageFrame, text='Ok', command=self.selectMsgCmd)
+        self.selectionButton.grid(row=1, column=2, padx=2)
 
         # Preceding messages
         self.preceding_messageFrame = tk.Frame(self.mainFrame)
-        self.preceding_messageFrame.grid(row=3, column=1, sticky='e', padx=20, pady=20)
+        self.preceding_messageFrame.grid(row=3, column=0, sticky='e', padx=20, pady=20)
         self.preceding_messageLabel= tk.Label(self.preceding_messageFrame, text="Réponse à")
         self.preceding_messageLabel.grid(row=0, columnspan=2)
         self.preceding_messageCanvas = []
@@ -110,26 +125,75 @@ class Gui_labelling:
         self.preceding_var = []
         for i in range(5):
             self.preceding_messageCanvas.append(tk.Text(self.preceding_messageFrame, height=2, width=40))
-            self.preceding_messageCanvas[i].insert(tk.END, "Réponse à "+str(i+1))
+            self.preceding_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n-(i+1), 'txt_msg'])
             self.preceding_messageCanvas[i].grid(row=i+1, column=0)
             self.preceding_var.append(tk.IntVar())
             self.preceding_box.append(tk.Checkbutton(self.preceding_messageFrame, variable = self.preceding_var[i]))
             self.preceding_box[i].grid(row=i+1, column=1)
         
-        # Other messages
-        self.other_messageFrame = tk.Frame(self.mainFrame)
-        self.other_messageFrame.grid(row=4, columnspan=2, padx=10, pady=10)
-        self.other_messageLabel= tk.Label(self.other_messageFrame, text="Autre manière d'écrire le message")
-        self.other_messageLabel.grid()
-        self.input_message = tk.Text(self.other_messageFrame, height=5, width=60)
-        self.input_message.grid()
-        
+        # Following messages
+        self.following_messageFrame = tk.Frame(self.mainFrame)
+        self.following_messageFrame.grid(row=3, column=1, sticky='w', padx=20, pady=20)
+        self.following_messageLabel= tk.Label(self.following_messageFrame, text="Réponses")
+        self.following_messageLabel.grid(row=0, columnspan=2)
+        self.following_messageCanvas = []
+        self.following_box = []
+        self.following_var = []
+        for i in range(5):
+            self.following_messageCanvas.append(tk.Text(self.following_messageFrame, height=2, width=40))
+            self.following_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n+(i+1), 'txt_msg'])
+            self.following_messageCanvas[i].grid(row=i+1, column=0)
+            self.following_var.append(tk.IntVar())
+            self.following_box.append(tk.Checkbutton(self.following_messageFrame, variable=self.following_var[i]))
+            self.following_box[i].grid(row=i+1, column=1)
+
+        # Common following messages
+        self.common_following_messageFrame = tk.Frame(self.mainFrame)
+        self.common_following_messageFrame.grid(row=3, column=2, sticky='w', padx=20, pady=20)
+        self.common_following_messageLabel= tk.Label(self.common_following_messageFrame, text="Réponses")
+        self.common_following_messageLabel.grid(row=0, columnspan=2)
+        self.common_following_messageCanvas = []
+        self.common_following_box = []
+        self.common_following_var = []
+        self.random_common_msg = random.sample(self.common_reply, 5)
+        for i in range(5):
+            self.common_following_messageCanvas.append(tk.Text(self.common_following_messageFrame, height=2, width=40))
+            self.common_following_messageCanvas[i].insert(tk.END, self.random_common_msg[i])
+            self.common_following_messageCanvas[i].grid(row=i+1, column=0)
+            self.common_following_var.append(tk.IntVar())
+            self.common_following_box.append(tk.Checkbutton(self.common_following_messageFrame, variable=self.common_following_var[i]))
+            self.common_following_box[i].grid(row=i+1, column=1)
+
+        # Other input
+        self.other_inputFrame = tk.Frame(self.mainFrame)
+        self.other_inputFrame.grid(row=4, column=0, padx=10, pady=10)
+        self.other_inputLabel= tk.Label(self.other_inputFrame, text="Autres réponses à possibles (Séparer les réponses avec ; )")
+        self.other_inputLabel.grid()
+        self.input_input = tk.Text(self.other_inputFrame, height=5, width=40)
+        self.input_input.grid()
+
+        # Other reply
+        self.other_replyFrame = tk.Frame(self.mainFrame)
+        self.other_replyFrame.grid(row=4, column=1, padx=10, pady=10)
+        self.other_replyLabel= tk.Label(self.other_replyFrame, text="Autres réponses possibles (Séparer les réponses avec ; )")
+        self.other_replyLabel.grid()
+        self.input_reply = tk.Text(self.other_replyFrame, height=5, width=40)
+        self.input_reply.grid()
         
         # Next message
         self.next_messageFrame = tk.Frame(self.mainFrame)
         self.next_messageFrame.grid(row=5, columnspan=2, sticky='s')
-        self.next_msg_Button = tk.Button(self.next_messageFrame, text='Confirmer et passer au message suivant', command=self.nextMsgCmd)
-        self.next_msg_Button.pack()
+        self.next_msg_Button = tk.Button(self.next_messageFrame, text='Confirmer et message suivant', command=self.__init__)
+        self.next_msg_Button.grid(row=0, column=0, padx=10)
+        self.rand_msg_Button = tk.Button(self.next_messageFrame, text='Confirmer et message aléatoire', command=self.randMsgCmd)
+        self.rand_msg_Button.grid(row=0, column=1, padx=10)
         
+
     def nextMsgCmd(self):
+        return 0
+
+    def selectMsgCmd(self):
+        return 0
+
+    def randMsgCmd(self):
         return 0

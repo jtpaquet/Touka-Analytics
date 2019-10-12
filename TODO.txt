@@ -37,6 +37,9 @@ X Hoster la DB sur Atlas / google cloud
 - Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Organisation des widgets
 	- Logique
+	- Ajouter un widget sélection de message avec un idx
+
+
 CHATBOT
 =======
 
