@@ -1,4 +1,4 @@
-import os
+import os.path
 import random
 import pandas as pd
 import tkinter as tk
@@ -8,11 +8,13 @@ from tkinter import ttk
 class Gui_labelling:
     def __init__(self, master, db):
         
+        self.file_path = os.path.dirname(os.path.realpath(__file__))
+
         self.master = master
         self.db = db
 
-        self.input_file = open('chatbot/input.from', 'a+')
-        self.reply_file = open('chatbot/reply.to', 'a+')
+        self.input_file = open(os.path.join(self.file_path, 'input.from'), 'a+')
+        self.reply_file = open(os.path.join(self.file_path, 'reply.to'), 'a+')
         self.members = self.db['members']
         self.members = {member['name'] : member['pseudo'] for member in self.members.find()}
 

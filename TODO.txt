@@ -34,19 +34,20 @@ APP
 - Implémenter les analytics dans l'app
 X Hoster la DB sur Atlas / google cloud
 - Mettre l'app sur ToukaAnalytics
-- Faire un UI pour le labelling de data/ajout de data/tokenization
+X Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Organisation des widgets
 	X Logique
 	X Ajouter un widget sélection de message avec un idx
 	X Formatter le text pour qu'il coupe aux espaces et non dans le mot (wrap=word)
 	X Ajouter les inputs customs au log
 	X Ajouter l'auteur du message
-	- Faire un loading 
+	- Faire un loading
+	- Centrer la fenêtre
 
 CHATBOT
 =======
 
-- Mettre le training sous forme (train_to, train_from) avec chaque input dans un fichier où chaque réponse correspond à la même ligne dans l'autre fichier
+- Labelling: Mettre le training sous forme (train_to, train_from) avec chaque input dans un fichier où chaque réponse correspond à la même ligne dans l'autre fichier
 - Entrainer le bot
 
 TEXT TO SPEECH

@@ -1,4 +1,4 @@
-import os
+import os.path
 from pymongo import MongoClient
 from GUI import Gui_labelling
 import tkinter as tk

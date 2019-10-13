@@ -1,0 +1,5 @@
+venv\Scripts\activate.bat
+
+pyinstaller -w -F -i "favicon.ico" "main.py"
+
+pyinstaller -w -F -i "favicon.ico" "main.py" --exclude matplotlib
