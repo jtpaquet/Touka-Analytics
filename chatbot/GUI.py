@@ -1,17 +1,61 @@
-import os.path
+import time
 import random
+import os.path
 import pandas as pd
 import tkinter as tk
-from tkinter import ttk   
-        
- 
-class Gui_labelling:
-    def __init__(self, master, db):
-        
-        self.file_path = os.path.dirname(os.path.realpath(__file__))
+from tkinter import ttk
+from pymongo import MongoClient
 
-        self.master = master
-        self.db = db
+
+class Loading_screen(tk.Toplevel):
+    def __init__(self, parent, file_path):
+        self.file_path = file_path
+        tk.Toplevel.__init__(self, parent)
+
+        # Loading
+        self.title('Labelling Data for Chatbot')
+        self.iconbitmap(os.path.join(self.file_path, 'favicon.ico'))
+        self.loadingFrame = tk.Frame(self)
+        self.loadingFrame.pack(expand=True, fill=tk.BOTH)
+        self.loadingImage = tk.PhotoImage(file=os.path.join(self.file_path, 'lakasse_icone256.png'))
+        self.loadingCanvas = tk.Canvas(self.loadingFrame, width=self.loadingImage.width(), height=self.loadingImage.height())
+        self.loadingCanvas.create_image(0, 0, image=self.loadingImage, anchor='nw')
+        self.loadingCanvas.grid(row=0)
+        self.loadingLabel = tk.Label(self.loadingFrame, text="Loading...", width=10)
+        self.loadingLabel.grid(row=1)
+        self.center()
+        self.update_idletasks()
+
+    def updateLabel(self, n=0):
+        loadinglist = ["Loading   ", "Loading.  ", "Loading.. ", "Loading..."]
+        self.loadingLabel.config(text=loadinglist[n%len(loadinglist)])
+        self.after(500, self.updateLabel, n+1)
+        self.update_idletasks()
+
+    def center(win):
+        win.update_idletasks()
+        width = win.winfo_width()
+        height = win.winfo_height()
+        x = (win.winfo_screenwidth() // 2) - (width // 2)
+        y = (win.winfo_screenheight() // 2) - (height // 2)
+        win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
+
+class Gui_labelling(tk.Tk):
+    def __init__(self, file_path, local):
+        tk.Tk.__init__(self)
+
+        self.file_path = file_path
+        self.withdraw()
+        self.loading_screen = Loading_screen(self, self.file_path)
+
+        self.title('Labelling Data for Chatbot')
+        self.iconbitmap(os.path.join(file_path, 'favicon.ico'))
+
+        if local:
+            client = MongoClient("localhost", 27017) # When offline
+        else:
+            client = MongoClient("mongodb+srv://jtpaquet:pv9E9SB5gAVzKWbW@toukaanalytics-epm7v.gcp.mongodb.net/ToukaAnalytics?retryWrites=true&w=majority")
+        self.db = client['ToukaAnalytics']
 
         self.input_file = open(os.path.join(self.file_path, 'input.from'), 'a+')
         self.reply_file = open(os.path.join(self.file_path, 'reply.to'), 'a+')
@@ -34,10 +78,10 @@ class Gui_labelling:
         self.msg_n = random.randint(5, len(self.df.index)-5)
         self.next_msg = self.msg_n + 10
 
-        self.common_reply = ["oumff", "moua", "ouais ouais supère", "J'aime bien le froumage", "inks", "ceci être bruh moment", "sa ses vraies", "ceci être ma naturelle position", "oker", "gros jeu", "Fais pas ta tapet", "Criss de centriste", "Ses vraies", "Ferme ta criss de gueule", "Tayeule gros fif", "T'es juste une moumoune", "icksder"]
+        self.common_reply = ["Big oumff", "oumff", "moua", "ouais ouais supère", "J'aime bien le froumage", "inks", "ceci être bruh moment", "sa ses vraies", "ceci être ma naturelle position", "oker", "gros jeu", "Fais pas ta tapet", "Criss de centriste", "Ses vraies", "Ferme ta criss de gueule", "Tayeule gros fif", "T'es juste une moumoune", "icksder"]
 
         # Main frame
-        self.mainFrame = tk.Frame(master)
+        self.mainFrame = tk.Frame(self)
         self.mainFrame.pack(expand=True)
 
         # Current message
@@ -149,12 +193,22 @@ class Gui_labelling:
         self.selectionInput.grid(row=1, column=1, padx=2, pady=2)
         self.selectionButton = tk.Button(self.selection_messageFrame, text='Ok', command=self.selectMsgCmd)
         self.selectionButton.grid(row=1, column=2, padx=2, pady=2)
-    
+
+        self.loading_screen.destroy()
+        time.sleep(0.5)
+        self.deiconify()
+        self.center()
+
 
     def __del__(self):
         self.input_file.close()
         self.reply_file.close()
     
+
+    def __exit__(self):
+        self.input_file.close()
+        self.reply_file.close()
+
 
     def selectMsgCmd(self):
         try: 
@@ -242,3 +296,11 @@ class Gui_labelling:
 
         self.input_input.delete("1.0", "end")
         self.input_reply.delete("1.0", "end")
+    
+    def center(self):
+        self.update_idletasks()
+        width = self.winfo_width()
+        height = self.winfo_height()
+        x = (self.winfo_screenwidth() // 2) - (width // 2)
+        y = (self.winfo_screenheight() // 2) - (height // 2)
+        self.geometry('{}x{}+{}+{}'.format(width, height, x, y))

@@ -41,7 +41,8 @@ X Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Formatter le text pour qu'il coupe aux espaces et non dans le mot (wrap=word)
 	X Ajouter les inputs customs au log
 	X Ajouter l'auteur du message
-	- Faire un loading
+	X Faire un loading
+	- Log problem
 	- Centrer la fenêtre
 
 CHATBOT
