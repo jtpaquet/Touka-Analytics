@@ -43,7 +43,8 @@ X Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Ajouter l'auteur du message
 	X Faire un loading
 	- Log problem
-	- Centrer la fenêtre
+	- Bouton Save
+	X Centrer la fenêtre
 
 CHATBOT
 =======
