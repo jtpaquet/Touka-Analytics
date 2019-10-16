@@ -42,9 +42,14 @@ X Faire un UI pour le labelling de data/ajout de data/tokenization
 	X Ajouter les inputs customs au log
 	X Ajouter l'auteur du message
 	X Faire un loading
-	- Log problem
-	- Bouton Save
+	X Log problem
+	X Bouton Save
 	X Centrer la fenêtre
+	- Log skips line
+	- Ajouter bouton connect to db ou local ou file dans loading
+	- Menubar pour changer par après
+	- Défilement des messages (en mettre genre 20 avant et après au lieu de 10)
+	- Pourquoi les authors ne s'affichent plus	
 
 CHATBOT
 =======
