@@ -1,3 +1,19 @@
-mongoimport --jsonArray --uri "mongodb+srv://jtpaquet:pv9E9SB5gAVzKWbW@toukaanalytics-epm7v.gcp.mongodb.net/ToukaAnalytics?retryWrites=true&w=majority" --collection "messages" --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\Touka analytics\LocalDB\messages.json"
+Import un jsonarray vers mongodb en local:
+
+mongoimport --jsonArray --uri "mongodb://localhost" -db "essai" --collection "messages" --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\Touka analytics\LocalDB\messages.json"
+
+Export la database locale dans un fichier
 
 mongoexport --jsonArray --pretty -d "ToukaAnalytics" -c "messages" -o "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\Touka analytics\LocalDB\messages.json"
+
+Export database Atlas cluster dans un fichier local:
+
+mongoexport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection messages --type json --out C:\Users\jtpaq\Desktop\db\messages.json
+
+
+Import fichier vers local database:
+
+mongoimport --host localhost --db essai --collection messages --file C:\Users\jtpaq\Desktop\db\messages.json
+
+
+localhost URI: mongodb://localhost/
