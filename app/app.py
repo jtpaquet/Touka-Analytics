@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 from flask import Flask
 from flask import render_template
 from pymongo import MongoClient
@@ -37,13 +38,13 @@ def ToukaAnalytics():
 	database = connection[DBS_NAME]
 	members = database['members']
 	messages = database['messages']
-	
+
 	data = []
+	t0 = datetime.now()
 	for member in members.find():
 		name = member['name']
 		query_txt = {'$and': [ {'author': name}, {'content': {'$exists': True, '$ne': None } } ] }
 		query_react = {'$and': [ {'author': name}, {'reaction': {'$exists': True, '$ne': None } } ] }
-		member_messages, member_timestamps, member_types, member_reacts = [], [], [], []
 		fields = {'content': True, 'timestamp': True, 'type': True, 'reactions': True, '_id': False}
         
 		fetched_data = list(messages.find(query_txt, fields))
@@ -63,12 +64,14 @@ def ToukaAnalytics():
 
 		data.append(member_data)
 
+	t1 = datetime.now()
+	print("total fetch data time:", t1-t0)
 	df = pd.DataFrame(data, columns=('name', 'content', 'timestamp', 'type', 'reactions', 'n_msg', 'n_char', 'ratio_char_msg'))
 	df = df.set_index('name')
 
 	df = df.drop(columns=["content", "type", "reactions"])
 	
-	df_json = json.dumps(df.to_html(), default=json_util.default)
+	df_json = json.dumps(df.to_json(), default=json_util.default)
 	connection.close()
 	return json.dumps(df_json)
 
