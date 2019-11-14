@@ -1,51 +1,48 @@
 queue()
 	.defer(d3.json, "/ToukaAnalytics")
-    .defer(d3.json, "/rawDB")
     .await(makeGraphs);
 
 function makeGraphs(error, projectsJson) {
 	
 	//Clean projectsJson data
 	var toukaProjects = projectsJson;
-	var dateFormat = d3.time.format("%Y-%m-%d");
-	console.log(dateFormat);
+	var dateFormat = d3.time.format("%m-%y");
 	toukaProjects.forEach(function(d) {
-		d["msg_timestamps"] = dateFormat.parse(d["msg_timestamps"]);
+		d["msg_timstamps"] = dateFormat.parse(d["msg_timstamps"]);
 	});
 
 	//Create a Crossfilter instance
 	var ndx = crossfilter(toukaProjects);
 
 	//Define Dimensions
-	var dateDim = ndx.dimension(function(d) { return d["date_posted"]; });
-	var resourceTypeDim = ndx.dimension(function(d) { return d["resource_type"]; });
-	var povertyLevelDim = ndx.dimension(function(d) { return d["poverty_level"]; });
-	var stateDim = ndx.dimension(function(d) { return d["school_state"]; });
-	var totalDonationsDim  = ndx.dimension(function(d) { return d["total_donations"]; });
+	var dateDim = ndx.dimension(function(d) { return d["msg_timstamps"]; });
+	var msg_countDim = ndx.dimension(function(d) { return d["msg_count"]; });
+	var char_countDim = ndx.dimension(function(d) { return d["char_count"]; });
+	var ratio_char_msgDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
+	var totalMsgDim  = ndx.dimension();
 
 
 	//Calculate metrics
 	var numProjectsByDate = dateDim.group(); 
-	var numProjectsByResourceType = resourceTypeDim.group();
-	var numProjectsByPovertyLevel = povertyLevelDim.group();
-	var totalDonationsByState = stateDim.group().reduceSum(function(d) {
-		return d["total_donations"];
-	});
+	var numProjectsByMsgCount = msg_countDim.group();
+	var numProjectsByCharCount = char_countDim.group();
+	var numProjectsByRatio = ratio_char_msgDim.group();
 
 	var all = ndx.groupAll();
-	var totalDonations = ndx.groupAll().reduceSum(function(d) {return d["total_donations"];});
+	var totalDonations = ndx.groupAll().reduceSum(function(d) {return d[""];});
 
-	var max_state = totalDonationsByState.top(1)[0].value;
+	var max_msg = numProjectsByMsgCount.top(1)[0].value;
+	var max_msg_author = numProjectsByMsgCount.top(1)[0].key;
 
 	//Define values (to be used in charts)
-	var minDate = dateDim.bottom(1)[0]["date_posted"];
-	var maxDate = dateDim.top(1)[0]["date_posted"];
+	var minDate = dateDim.bottom(1)[0]["msg_timstamps"];
+	var maxDate = dateDim.top(1)[0]["msg_timstamps"];
 
     //Charts
 	var timeChart = dc.barChart("#time-chart");
-	var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
-	var povertyLevelChart = dc.rowChart("#poverty-level-row-chart");
-	var usChart = dc.geoChoroplethChart("#us-chart");
+	var msgCountChart = dc.rowChart("#msg-count-row-chart");
+	var charCountChart = dc.rowChart("#char-count-row-chart");
+	var ratioChart = dc.rowChart("#ratio-row-chart");
 	var numberProjectsND = dc.numberDisplay("#number-projects-nd");
 	var totalDonationsND = dc.numberDisplay("#total-donations-nd");
 
@@ -72,38 +69,19 @@ function makeGraphs(error, projectsJson) {
 		.xAxisLabel("Year")
 		.yAxis().ticks(4);
 
-	resourceTypeChart
+	msgCountChart
         .width(300)
         .height(250)
-        .dimension(resourceTypeDim)
-        .group(numProjectsByResourceType)
+        .dimension(msg_countDim)
+        .group(numProjectsByMsgCount)
         .xAxis().ticks(4);
 
-	povertyLevelChart
+	charCountChart
 		.width(300)
 		.height(250)
-        .dimension(povertyLevelDim)
-        .group(numProjectsByPovertyLevel)
+        .dimension(char_countDim)
+        .group(numProjectsByCharCount)
         .xAxis().ticks(4);
-
-
-	usChart.width(1000)
-		.height(330)
-		.dimension(stateDim)
-		.group(totalDonationsByState)
-		.colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"])
-		.colorDomain([0, max_state])
-		.overlayGeoJson(statesJson["features"], "state", function (d) {
-			return d.properties.name;
-		})
-		.projection(d3.geo.albersUsa()
-    				.scale(600)
-    				.translate([340, 150]))
-		.title(function (p) {
-			return "State: " + p["key"]
-					+ "\n"
-					+ "Total Donations: " + Math.round(p["value"]) + " $";
-		})
 
     dc.renderAll();
 

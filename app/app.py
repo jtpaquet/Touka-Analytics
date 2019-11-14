@@ -67,9 +67,9 @@ def ToukaAnalytics():
 		nb_characters.append(s_total)
 		nb_characters_total.append(s)
 
-	df['n_char_total'] = nb_characters_total
+	df['char_count'] = nb_characters_total
 
-	df['ratio_char_msg'] = df['n_char_total'] / df['msg_count']
+	df['ratio_char_msg'] = df['char_count'] / df['msg_count']
 
 	df = df.drop(columns=["txt_msg", "Type", "Reaction"])
 	
