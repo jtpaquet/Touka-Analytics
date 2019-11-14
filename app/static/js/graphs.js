@@ -7,16 +7,19 @@ function makeGraphs(error, projectsJson) {
 	//Clean projectsJson data
 	var toukaProjects = projectsJson;
 	var dateFormat = d3.time.format("%m-%y");
+	console.log("ToukaProjects");
 	console.log(toukaProjects);
 
 	//Create a Crossfilter instance
 	var ndx = crossfilter(toukaProjects);
+	console.log("ndx");
+	console.log(ndx);
 
 	//Define Dimensions
-	var dateDim = ndx.dimension(function(d) { return d3.time(d["msg_timstamps"]*1000); });
-	console.log(dateDim);
-	var msgCountDim = ndx.dimension(function(d) { return d["msg_count"]; });
-	var charCountDim = ndx.dimension(function(d) { return d["char_count"]; });
+	var dateDim = ndx.dimension(function(d) { return dateFormat(new Date(d.timestamp * 1000)); });
+	console.log(dateDim)
+	var msgCountDim = ndx.dimension(function(d) { return d["n_msg"]; });
+	var charCountDim = ndx.dimension(function(d) { return d["n_char"]; });
 	var ratioDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
 	// var totalMsgDim  = ndx.dimension();
 
