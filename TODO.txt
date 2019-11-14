@@ -49,7 +49,8 @@ X Faire un UI pour le labelling de data/ajout de data/tokenization
 	- Ajouter bouton connect to db ou local ou file dans loading
 	- Menubar pour changer par après
 	- Défilement des messages (en mettre genre 20 avant et après au lieu de 10)
-	- Pourquoi les authors ne s'affichent plus	
+	- Pourquoi les authors ne s'affichent plus/ scrollbox/save marchent pu
+
 
 CHATBOT
 =======

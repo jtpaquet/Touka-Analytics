@@ -40,7 +40,7 @@ class Loading_screen(tk.Tk):
         txt = loadinglist[n%len(loadinglist)]
         self.loadingLabel.config(text=txt)
         self.after(500, lambda: self.updateLabel(loadinglist.index(txt)+1))
-        self.update()
+        self.update_idletasks()
 
     def center(self):
         self.update_idletasks()
@@ -51,15 +51,10 @@ class Loading_screen(tk.Tk):
         self.geometry('{}x{}+{}+{}'.format(width, height, x, y))
 
     def connect(self, connectMethod):
-        for child in self.connectFrame.winfo_children():
-            child.grid_remove()
-            child.destroy()
-        self.connectFrame.pack_forget()
-        self.connectFrame.destroy()
-        self.update()
 
         self.loadingLabel = tk.Label(self, text="Loading...", width=10)
         self.loadingLabel.pack(pady=2)
+        self.update()
         self.updateLabel()
 
         if connectMethod == 'cloud':
@@ -101,7 +96,7 @@ class Loading_screen(tk.Tk):
 
 
 class Gui_labelling(tk.Tk):
-    def __init__(self, file_path,db):
+    def __init__(self, file_path, db):
         tk.Tk.__init__(self)
 
         self.file_path = file_path
@@ -213,6 +208,7 @@ class Gui_labelling(tk.Tk):
         for i in range(5):
             self.following_author_var.append(tk.StringVar())
             self.following_author_var[i].set("{}:".format(self.df.loc[self.msg_n+(i+1), 'author']))
+            print(self.df.loc[self.msg_n+(i+1), 'author'])
             self.following_authorLabel.append(tk.Label(self.following_messageFrame, textvariable=self.following_author_var[i], width=12))
             self.following_authorLabel[i].grid(row=i+1, column=0)
             self.following_messageCanvas.append(tk.Text(self.following_messageFrame, height=2, width=60, wrap=tk.WORD, font=("Verdana", 10)))
@@ -373,6 +369,7 @@ class Gui_labelling(tk.Tk):
 
         for i in range(5):
             self.preceding_author_var[i].set("{}:".format(self.df.loc[self.msg_n-(5-i), 'author']))
+            print(self.df.loc[self.msg_n-(5-i), 'author'])
             self.preceding_messageCanvas[i].delete("1.0", "end")
             self.preceding_messageCanvas[i].insert(tk.END, self.df.loc[self.msg_n-(5-i), 'txt_msg'])
             self.preceding_var[i].set(False)
@@ -388,6 +385,7 @@ class Gui_labelling(tk.Tk):
 
         self.input_input.delete("1.0", "end")
         self.input_reply.delete("1.0", "end")
+        self.update()
 
     def init_DB(self):
         return 0
