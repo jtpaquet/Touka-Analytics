@@ -41,16 +41,19 @@ def ToukaAnalytics():
 		query_txt = {'$and': [ {'author': name}, {'content': {'$exists': True, '$ne': None } } ] }
 		query_react = {'$and': [ {'author': name}, {'reaction': {'$exists': True, '$ne': None } } ] }
 
-		member_messages = [ msg['content'] for msg in messages.find(query_txt) ]
-		member_dates = [ msg['date'] for msg in messages.find(query_txt) ]
-		member_timestamps = [ msg['timestamp'] for msg in messages.find(query_txt) ]
-		member_types = [ msg['type'] for msg in messages.find() ]
-		member_reacts = [ msg['reaction'] for msg in messages.find(query_react) ]
+		member_messages, member_timestamps, member_types, member_reacts = [], [], [], []
+
+		for msg in messages.find(query_txt): # Changer ça ici, c'est long af
+			member_messages.append(msg['content'])
+			member_timestamps.append(msg['timestamp'])
+			member_types.append(msg['type'])
+			member_reacts.append(msg['reactions'])
+
 		n_msg = messages.find(query_txt).count()
 
-		data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'msg_timestamps' : member_timestamps, 'date_msg' : member_dates, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
+		data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'msg_timestamps' : member_timestamps, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
 
-	df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'msg_timestamps', 'date_msg', 'Type', 'Reaction', 'msg_count'))
+	df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'msg_timestamps', 'Type', 'Reaction', 'msg_count'))
 	df = df.set_index('Name')
 
 	nb_characters = []
@@ -64,13 +67,14 @@ def ToukaAnalytics():
 		nb_characters.append(s_total)
 		nb_characters_total.append(s)
 
-	df['n_char'] = nb_characters
 	df['n_char_total'] = nb_characters_total
 
 	df['ratio_char_msg'] = df['n_char_total'] / df['msg_count']
+
+	df = df.drop(columns=["txt_msg", "Type", "Reaction"])
 	
 	df_json = json.dumps(df.to_json(), default=json_util.default)
-	return df_json
+	return df.to_json()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True)

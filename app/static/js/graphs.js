@@ -1,21 +1,20 @@
 queue()
+	.defer(d3.json, "/ToukaAnalytics")
     .defer(d3.json, "/rawDB")
-    .defer(d3.json, "/ToukaAnalytics")
     .await(makeGraphs);
 
-function makeGraphs(error, projectsJson, statesJson) {
+function makeGraphs(error, projectsJson) {
 	
 	//Clean projectsJson data
-	var donorschooseProjects = projectsJson;
-	var dateFormat = d3.time.format("%m-%Y");
-	donorschooseProjects.forEach(function(d) {
-		d["date_posted"] = dateFormat.parse(d["date_posted"]);
-		d["date_posted"].setDate(1);
-		d["total_donations"] = +d["total_donations"];
+	var toukaProjects = projectsJson;
+	var dateFormat = d3.time.format("%Y-%m-%d");
+	console.log(dateFormat);
+	toukaProjects.forEach(function(d) {
+		d["msg_timestamps"] = dateFormat.parse(d["msg_timestamps"]);
 	});
 
 	//Create a Crossfilter instance
-	var ndx = crossfilter(donorschooseProjects);
+	var ndx = crossfilter(toukaProjects);
 
 	//Define Dimensions
 	var dateDim = ndx.dimension(function(d) { return d["date_posted"]; });
