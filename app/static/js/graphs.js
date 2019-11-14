@@ -7,6 +7,10 @@ function makeGraphs(error, projectsJson) {
 	//Clean projectsJson data
 	var toukaProjects = projectsJson;
 	var dateFormat = d3.time.format("%m-%y");
+	donorschooseProjects.forEach(function(d) {
+		d["timestamp"] = dateFormat.parse(d["timestamp"]);
+		d["timestamp"].setDate(1);
+	});
 	console.log("ToukaProjects");
 	console.log(toukaProjects);
 
@@ -17,7 +21,8 @@ function makeGraphs(error, projectsJson) {
 
 	//Define Dimensions
 	var dateDim = ndx.dimension(function(d) { return dateFormat(new Date(d.timestamp * 1000)); });
-	console.log(dateDim)
+	console.log("dateDim");
+	console.log(dateDim);
 	var msgCountDim = ndx.dimension(function(d) { return d["n_msg"]; });
 	var charCountDim = ndx.dimension(function(d) { return d["n_char"]; });
 	var ratioDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
