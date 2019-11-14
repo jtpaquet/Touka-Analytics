@@ -7,29 +7,28 @@ function makeGraphs(error, projectsJson) {
 	//Clean projectsJson data
 	var toukaProjects = projectsJson;
 	var dateFormat = d3.time.format("%m-%y");
-	toukaProjects.forEach(function(d) {
-		d["msg_timstamps"] = dateFormat.parse(d["msg_timstamps"]);
-	});
+	console.log(toukaProjects);
 
 	//Create a Crossfilter instance
 	var ndx = crossfilter(toukaProjects);
 
 	//Define Dimensions
-	var dateDim = ndx.dimension(function(d) { return d["msg_timstamps"]; });
-	var msg_countDim = ndx.dimension(function(d) { return d["msg_count"]; });
-	var char_countDim = ndx.dimension(function(d) { return d["char_count"]; });
-	var ratio_char_msgDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
-	var totalMsgDim  = ndx.dimension();
+	var dateDim = ndx.dimension(function(d) { return d3.time(d["msg_timstamps"]*1000); });
+	console.log(dateDim);
+	var msgCountDim = ndx.dimension(function(d) { return d["msg_count"]; });
+	var charCountDim = ndx.dimension(function(d) { return d["char_count"]; });
+	var ratioDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
+	// var totalMsgDim  = ndx.dimension();
 
 
 	//Calculate metrics
 	var numProjectsByDate = dateDim.group(); 
-	var numProjectsByMsgCount = msg_countDim.group();
-	var numProjectsByCharCount = char_countDim.group();
-	var numProjectsByRatio = ratio_char_msgDim.group();
+	var numProjectsByMsgCount = msgCountDim.group();
+	var numProjectsByCharCount = charCountDim.group();
+	var numProjectsByRatio = ratioDim.group();
 
 	var all = ndx.groupAll();
-	var totalDonations = ndx.groupAll().reduceSum(function(d) {return d[""];});
+	// var totalDonations = ndx.groupAll().reduceSum(function(d) {return d[""];});
 
 	var max_msg = numProjectsByMsgCount.top(1)[0].value;
 	var max_msg_author = numProjectsByMsgCount.top(1)[0].key;
@@ -44,7 +43,7 @@ function makeGraphs(error, projectsJson) {
 	var charCountChart = dc.rowChart("#char-count-row-chart");
 	var ratioChart = dc.rowChart("#ratio-row-chart");
 	var numberProjectsND = dc.numberDisplay("#number-projects-nd");
-	var totalDonationsND = dc.numberDisplay("#total-donations-nd");
+	// var totalDonationsND = dc.numberDisplay("#total-donations-nd");
 
 	numberProjectsND
 		.formatNumber(d3.format("d"))
@@ -72,14 +71,14 @@ function makeGraphs(error, projectsJson) {
 	msgCountChart
         .width(300)
         .height(250)
-        .dimension(msg_countDim)
+        .dimension(msgCountDim)
         .group(numProjectsByMsgCount)
         .xAxis().ticks(4);
 
 	charCountChart
 		.width(300)
 		.height(250)
-        .dimension(char_countDim)
+        .dimension(charCountDim)
         .group(numProjectsByCharCount)
         .xAxis().ticks(4);
 
