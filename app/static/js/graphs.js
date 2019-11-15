@@ -5,91 +5,63 @@ queue()
 function makeGraphs(error, projectsJson) {
 	
 	//Clean projectsJson data
-	var toukaProjects = projectsJson;
-	var dateFormat = d3.time.format("%m-%y");
-	donorschooseProjects.forEach(function(d) {
-		d["timestamp"] = dateFormat.parse(d["timestamp"]);
-		d["timestamp"].setDate(1);
-	});
-	console.log("ToukaProjects");
-	console.log(toukaProjects);
+	var toukaProjects = JSON.parse(projectsJson);
+	// var dateFormat = d3.time.format("%m-%y");
+	for (var member in toukaProjects['timestamp']) {
+		toukaProjects['timestamp'][member].forEach(function(elem, idx, arr) {arr[idx] = new Date(elem); });
+	}
+	var total_msg = 0;
+	for (var member in toukaProjects['n_msg']) {
+		total_msg += toukaProjects['n_msg'][member];
+	}
 
-	//Create a Crossfilter instance
-	var ndx = crossfilter(toukaProjects);
-	console.log("ndx");
-	console.log(ndx);
+	// var ndx = crossfilter(toukaProjects);
 
-	//Define Dimensions
-	var dateDim = ndx.dimension(function(d) { return dateFormat(new Date(d.timestamp * 1000)); });
-	console.log("dateDim");
-	console.log(dateDim);
-	var msgCountDim = ndx.dimension(function(d) { return d["n_msg"]; });
-	var charCountDim = ndx.dimension(function(d) { return d["n_char"]; });
-	var ratioDim = ndx.dimension(function(d) { return d["ratio_char_msg"]; });
-	// var totalMsgDim  = ndx.dimension();
+	// set the dimensions and margins of the graph
+	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+		width = 460 - margin.left - margin.right,
+		height = 400 - margin.top - margin.bottom;
 
+	// append the svg object to the body of the page
+	var svg = d3.select("#time-chart")
+	.append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+		.attr("transform",
+			"translate(" + margin.left + "," + margin.top + ")");
+	
 
-	//Calculate metrics
-	var numProjectsByDate = dateDim.group(); 
-	var numProjectsByMsgCount = msgCountDim.group();
-	var numProjectsByCharCount = charCountDim.group();
-	var numProjectsByRatio = ratioDim.group();
+	for (var member in toukaProjects['timestamp']) {
+		if (member == 'Djézeune') {
 
-	var all = ndx.groupAll();
-	// var totalDonations = ndx.groupAll().reduceSum(function(d) {return d[""];});
-
-	var max_msg = numProjectsByMsgCount.top(1)[0].value;
-	var max_msg_author = numProjectsByMsgCount.top(1)[0].key;
-
-	//Define values (to be used in charts)
-	var minDate = dateDim.bottom(1)[0]["msg_timstamps"];
-	var maxDate = dateDim.top(1)[0]["msg_timstamps"];
-
-    //Charts
-	var timeChart = dc.barChart("#time-chart");
-	var msgCountChart = dc.rowChart("#msg-count-row-chart");
-	var charCountChart = dc.rowChart("#char-count-row-chart");
-	var ratioChart = dc.rowChart("#ratio-row-chart");
-	var numberProjectsND = dc.numberDisplay("#number-projects-nd");
-	// var totalDonationsND = dc.numberDisplay("#total-donations-nd");
-
-	numberProjectsND
-		.formatNumber(d3.format("d"))
-		.valueAccessor(function(d){return d; })
-		.group(all);
-
-	totalDonationsND
-		.formatNumber(d3.format("d"))
-		.valueAccessor(function(d){return d; })
-		.group(totalDonations)
-		.formatNumber(d3.format(".3s"));
-
-	timeChart
-		.width(600)
-		.height(160)
-		.margins({top: 10, right: 50, bottom: 30, left: 50})
-		.dimension(dateDim)
-		.group(numProjectsByDate)
-		.transitionDuration(500)
-		.x(d3.time.scale().domain([minDate, maxDate]))
-		.elasticY(true)
-		.xAxisLabel("Year")
-		.yAxis().ticks(4);
-
-	msgCountChart
-        .width(300)
-        .height(250)
-        .dimension(msgCountDim)
-        .group(numProjectsByMsgCount)
-        .xAxis().ticks(4);
-
-	charCountChart
-		.width(300)
-		.height(250)
-        .dimension(charCountDim)
-        .group(numProjectsByCharCount)
-        .xAxis().ticks(4);
-
-    dc.renderAll();
+			// Add X axis --> it is a date format
+			var x = d3.scaleTime()
+			.domain(toukaProjects['timestamp'][member])
+			.range([ 0, width ]);
+			svg.append("g")
+			.attr("transform", "translate(0," + height + ")")
+			.call(d3.axisBottom(x));
+			
+			// Add Y axis
+			var y = d3.scaleLinear()
+			.domain(range(1, toukaProjects['timestamp'][member].length))
+			.range([ height, 0 ]);
+			svg.append("g")
+			.call(d3.axisLeft(y));
+			
+			// Add the area
+			svg.append("path")
+			.datum(toukaProjects['timestamp'][member])
+			.attr("fill", "#cce5df")
+			.attr("stroke", "#69b3a2")
+			.attr("stroke-width", 1.5)
+			.attr("d", d3.area()
+			.x(function(d) { return x(d.date) })
+			.y0(y(0))
+			.y1(function(d) { return y(d.value) })
+			)
+		}
+	}
 
 };

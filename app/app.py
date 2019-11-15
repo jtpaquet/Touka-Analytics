@@ -51,8 +51,11 @@ def ToukaAnalytics():
 		
 		member_data = {}
 		for field in list(fields.keys())[:-1]:
-			member_data[field] = list(map(lambda d: d[field], fetched_data))
-			if field== 'content':
+			if field == 'timestamp':
+				member_data[field] = list(map(lambda d: int(d[field]), fetched_data))
+			else:
+				member_data[field] = list(map(lambda d: d[field], fetched_data))
+			if field == 'content':
 				s = 0
 				for msg in member_data[field]:
 					s += len(msg)
@@ -73,7 +76,7 @@ def ToukaAnalytics():
 	
 	df_json = json.dumps(df.to_json(), default=json_util.default)
 	connection.close()
-	return json.dumps(df_json)
+	return df_json
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True)
