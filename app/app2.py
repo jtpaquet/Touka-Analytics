@@ -24,12 +24,20 @@ def index():
 def ToukaAnalytics():
     connection = MongoClient(MONGODB_URI)
     database = connection[DBS_NAME]
-    members = database['members']
     collection = database['messages']
     projects = collection.find(projection=FIELDS)
-    json_projects = []
-    for project in projects:
-        json_projects.append(project)
+    json_projects = [project for project in projects]
+    json_projects = json.dumps(json_projects, default=json_util.default)
+    connection.close()
+    return json_projects
+
+@app.route("/members")
+def Members():
+    connection = MongoClient(MONGODB_URI)
+    database = connection[DBS_NAME]
+    collection = database['members']
+    projects = collection.find(projection = {'name': True, 'pseudo': True, '_id': False})
+    json_projects = [project for project in projects]
     json_projects = json.dumps(json_projects, default=json_util.default)
     connection.close()
     return json_projects

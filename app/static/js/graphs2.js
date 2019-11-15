@@ -1,24 +1,31 @@
 queue()
-    .defer(d3.json, "/ToukaAnalytics")
+	.defer(d3.json, "/ToukaAnalytics")
+	.defer(d3.json, "/members")
     .await(makeGraphs);
 
-function makeGraphs(error, projectsJson) {
+function makeGraphs(error, projectsJson, membersJson) {
 	
 	//Clean projectsJson data
 	var toukaData = projectsJson;
+	var membersData = {};
+	membersJson.forEach(function(d) {
+		membersData[d['name']] = d['pseudo'];
+	});
 	var dateFormat = d3.time.format("%Y-%m-%d");
 	toukaData.forEach(function(d) {
 		d["timestamp"] = new Date(d['timestamp']);
+		d['author'] = membersData[d['author']];
 	});
 
 	//Create a Crossfilter instance
 	var ndx = crossfilter(toukaData);
 
 	//Define Dimensions
-	var authorDim = ndx.dimension(function(d) { return d["author"] ? d["author"] : ""; });
-	var dateDim = ndx.dimension(function(d) { return d["timestamp"] ? d["timestamp"] : 0; });
-	var typeDim = ndx.dimension(function(d) { return d["type"] ? d["type"] : ""; });
-	var contentDim = ndx.dimension(function(d) { return d["content"] ? d["type"] : ""; });
+	var authorDim = ndx.dimension(function(d) { return d["author"] });
+	// Si je veux avoir tous les messages écrits par un auteur, je fais authorDim.filter('author')
+	var dateDim = ndx.dimension(function(d) { return d["timestamp"] });
+	var typeDim = ndx.dimension(function(d) { return d["type"] });
+	var contentDim = ndx.dimension(function(d) { return d["content"] });
 
 	//Calculate metrics
 	var msgByAuthor = authorDim.group();
@@ -27,7 +34,7 @@ function makeGraphs(error, projectsJson) {
 	var msgByContent = contentDim.group();
 
 	var all = ndx.groupAll();
-	var totalMsg = ndx.groupAll().reduceSum(function(d) {return d["author"];});
+	var totalMsg = all.reduceCount().value();
 
 	//Define values (to be used in charts)
 	var minDate = dateDim.bottom(1)[0]["timestamp"];
