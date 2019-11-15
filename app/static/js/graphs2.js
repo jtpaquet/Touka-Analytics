@@ -56,14 +56,14 @@ function makeGraphs(error, projectsJson, membersJson) {
 	var toukaCreation = timeFormat(minDate);
 
 	msgCountChart
-        .width(300)
-        .height(280)
+		.width(300)
+		.height(280)
 		.x(d3.scale.ordinal().domain(n_msgByAuthor.map(function(d) {return d.key })))
 		.y(d3.scale.linear().domain([0, 55000]))
 		.xUnits(dc.units.ordinal)
 		.brushOn(false)
-	    .yAxisLabel("Messages envoyés")
-        .dimension(authorDim)
+		.yAxisLabel("Messages envoyés")
+		.dimension(authorDim)
 		.group(msgByAuthor)
 		
 	totalMsgND
