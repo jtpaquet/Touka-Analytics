@@ -56,11 +56,14 @@ def ToukaAnalytics():
 			else:
 				member_data[field] = list(map(lambda d: d[field], fetched_data))
 			if field == 'content':
-				s = 0
+				sum_char = 0
+				sum_word = 0
 				for msg in member_data[field]:
-					s += len(msg)
+					sum_char += len(msg)
+					sum_word += len(msg.split(' '))
 		
-		member_data['n_char'] = s
+		member_data['n_char'] = sum_char
+		member_data['n_word'] = sum_word
 		member_data['n_msg'] = len(member_data['content'])
 		member_data['ratio_char_msg'] = member_data['n_char'] / member_data['n_msg']
 		member_data['name'] = member['pseudo']
@@ -69,7 +72,7 @@ def ToukaAnalytics():
 
 	t1 = datetime.now()
 	print("total fetch data time:", t1-t0)
-	df = pd.DataFrame(data, columns=('name', 'content', 'timestamp', 'type', 'reactions', 'n_msg', 'n_char', 'ratio_char_msg'))
+	df = pd.DataFrame(data, columns=('name', 'content', 'timestamp', 'type', 'reactions', 'n_msg', 'n_char', 'n_word', 'ratio_char_msg'))
 	df = df.set_index('name')
 
 	df = df.drop(columns=["content", "type", "reactions"])

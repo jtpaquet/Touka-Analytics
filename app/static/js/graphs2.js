@@ -50,10 +50,18 @@ function makeGraphs(error, projectsJson, membersJson) {
 	var maxMonth = monthDim.top(1)[0]["month"];
 
     //Charts
-	// var timeChart = dc.lineChart("#time-chart");
+	var timeChart = dc.lineChart("#time-chart");
 	var msgCountChart = dc.barChart("#msg-count-row-chart");
+	var msgPctChart = dc.pieChart('#poverty-level-row-chart')
 	var totalMsgND = dc.numberDisplay("#total-msg-nd");
 	var toukaCreation = timeFormat(minDate);
+
+	timeChart
+		.width(600)
+		.height(160)
+		.x(d3.scale.linear().domain())
+		.y()
+
 
 	msgCountChart
 		.width(300)
@@ -71,7 +79,7 @@ function makeGraphs(error, projectsJson, membersJson) {
 		.valueAccessor(function(d){return d; })
 		.group(all)
 		.formatNumber(d3.format(".3s"));
-
+	
 	// timeChart
 	// 	.width(600)
 	// 	.height(160)
@@ -83,6 +91,8 @@ function makeGraphs(error, projectsJson, membersJson) {
 	// 	.elasticY(true)
 	// 	.xAxisLabel("Year")
 	// 	.yAxis().ticks(4);
+
+	// Msg par année
 
     dc.renderAll();
 	console.log("--Graphics rendered--")
