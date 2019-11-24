@@ -47,11 +47,10 @@ def ToukaAnalytics():
 	data['total_msg'] = len(df.index)
 	data['date_min'] = min(df['timestamp'])
 	data['date_max'] = max(df['timestamp'])
-	# data['n_msg_by_hour'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("hour")])['date'].count()
-	# data['n_msg_by_weekday'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("dayofweek")])['date'].count()
+	data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['date'].count()
+	data['n_msg_by_weekday'] = df.groupby(['author', df['date'].dt.dayofweek])['date'].count()
 	data['n_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].count()
 	data['total_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].agg(count_total_msg)
-	# Regrouper les messages par heures de la journée, par jour de la semaine et par mois
 	return dumps(data)
 
 
