@@ -23,23 +23,34 @@ def index():
 	
 @app.route("/ToukaAnalytics")
 def ToukaAnalytics():
+	t0 = datetime.now()
 	connection = MongoClient(MONGODB_URI)
 	database = connection[DBS_NAME]
 	members = database['members']
 	messages = database['messages']
+	print('connexion time:', datetime.now()-t0)
 	t0 = datetime.now()
 	projects = messages.find(projection=FIELDS)
-	json_projects = [project for project in projects]
-	# Make and arrange DataFrame
-	df = pd.DataFrame(json_projects)
 	print('fetch time:', datetime.now()-t0)
+	json_projects = [project for project in projects]
+	pseudos = [author['pseudo'] for author in list(members.find(projection={'pseudo':True}))]
+	# Make and arrange DataFrame
+	t0 = datetime.now()
+	df = pd.DataFrame(json_projects)
+	print('making df time:', datetime.now()-t0)
+	t0 = datetime.now()
 	for member in members.find():
 		df = df.replace(member['name'], member['pseudo'])
+	print('replacing name time: ', datetime.now()-t0)
+	t0 = datetime.now()
 	df['date'] = pd.to_datetime(df["timestamp"], unit='ms')
+	print('timestamp to datetime time: ', datetime.now()-t0)
+	connection.close()
 
 	# Compile overall data on whole database
+	t0 = datetime.now()
 	data = {}
-	data['n_msg'] = df.groupby(['author']).agg({'author':'count'})['author']
+	data['n_msg'] = df.groupby(['author']).count()['_id']
 	data['n_word'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg).split(' ')) for msg in x]))
 	data['n_char'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg)) for msg in x]))
 	data['ratio_char_msg'] = data['n_char'] / data['n_msg']
@@ -47,11 +58,16 @@ def ToukaAnalytics():
 	data['total_msg'] = len(df.index)
 	data['date_min'] = min(df['timestamp'])
 	data['date_max'] = max(df['timestamp'])
-	data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['date'].count()
-	data['n_msg_by_weekday'] = df.groupby(['author', df['date'].dt.dayofweek])['date'].count()
+	data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['_id'].count()
+	data['n_msg_by_weekday'] = df.groupby(['author', df['date'].dt.dayofweek])['_id'].count()
 	data['n_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].count()
-	data['total_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].agg(count_total_msg)
-	return dumps(data)
+	data['total_msg_by_month'] = df.groupby(pd.DatetimeIndex(df['date']).to_period("M"))['_id'].count()
+	for key in data.keys():
+		print(key)
+		if key != 'total_msg':
+			data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
+	print('compiling data time: ', datetime.now()-t0)
+	return json.dumps(data)
 
 
 if __name__ == "__main__":
