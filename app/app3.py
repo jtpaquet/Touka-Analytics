@@ -64,10 +64,17 @@ def ToukaAnalytics():
 	data['n_msg_by_weekday'] = df.groupby(['author', df['date'].dt.dayofweek])['_id'].count()
 	data['n_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].count()
 	data['total_msg_by_month'] = df.groupby(pd.DatetimeIndex(df['date']).to_period("M"))['_id'].count()
+	# Faire les reactions
 	for key in data.keys():
 		if key not in ['total_msg', 'date_min', 'date_max']:
-			if key in ['n_msg_by_hour', 'n_msg_by_weekday', 'n_msg_by_month']:
+			if key in ['n_msg_by_hour', 'n_msg_by_weekday']:
 				data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
+			elif key == 'n_msg_by_month':
+				data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
+				for author in pseudos:
+					data[key][author] = {k.strftime("%Y-%m"): v for k,v in data[key][author].items()}
+			elif key == 'total_msg_by_month':
+				data[key] = {k.strftime("%Y-%m"): v for k, v in data[key].items()}
 			else:
 				data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
 	print('compiling data time: ', datetime.now()-t0)
