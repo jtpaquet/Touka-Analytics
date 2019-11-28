@@ -30,13 +30,15 @@ def ToukaAnalytics():
 	messages = database['messages']
 	print('connexion time:', datetime.now()-t0)
 	t0 = datetime.now()
-	projects = messages.find(projection=FIELDS)
+	cursor = messages.find(projection=FIELDS)
 	print('fetch time:', datetime.now()-t0)
-	json_projects = [project for project in projects]
+	t0 = datetime.now()
+	msg_list = [msg for msg in cursor]
+	print('Making list time:', datetime.now()-t0)
 	pseudos = [author['pseudo'] for author in list(members.find(projection={'pseudo':True}))]
 	# Make and arrange DataFrame
 	t0 = datetime.now()
-	df = pd.DataFrame(json_projects)
+	df = pd.DataFrame(msg_list)
 	print('making df time:', datetime.now()-t0)
 	t0 = datetime.now()
 	for member in members.find():
@@ -63,9 +65,11 @@ def ToukaAnalytics():
 	data['n_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].count()
 	data['total_msg_by_month'] = df.groupby(pd.DatetimeIndex(df['date']).to_period("M"))['_id'].count()
 	for key in data.keys():
-		print(key)
-		if key != 'total_msg':
-			data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
+		if key not in ['total_msg', 'date_min', 'date_max']:
+			if key in ['n_msg_by_hour', 'n_msg_by_weekday', 'n_msg_by_month']:
+				data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
+			else:
+				data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
 	print('compiling data time: ', datetime.now()-t0)
 	return json.dumps(data)
 
