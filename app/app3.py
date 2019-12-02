@@ -52,12 +52,12 @@ def ToukaAnalytics():
 	# Compile overall data on whole database
 	t0 = datetime.now()
 	data = {}
-	data['n_msg'] = df.groupby(['author']).count()['_id']
+	data['n_msg'] = {d['_id'] : d['count'] for d in list(messages.aggregate([{"$sortByCount": "$author"}])}
 	data['n_word'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg).split(' ')) for msg in x]))
 	data['n_char'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg)) for msg in x]))
 	data['ratio_char_msg'] = data['n_char'] / data['n_msg']
 	data['ratio_word_msg'] = data['n_word'] / data['n_msg']
-	data['total_msg'] = len(df.index)
+	data['total_msg'] = list(messages.aggregate( [ { "$collStats": { "storageStats": { } } } ] ))[0]['storageStats']['count']
 	data['date_min'] = min(df['timestamp'])
 	data['date_max'] = max(df['timestamp'])
 	data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['_id'].count()
@@ -101,4 +101,3 @@ def count_total_msg(df_):
 	for count in pd.DatetimeIndex(df_['date']).to_period("M").count():
 		s += count
 	return s
-
