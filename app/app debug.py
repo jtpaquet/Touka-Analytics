@@ -20,24 +20,8 @@ database = connection[DBS_NAME]
 members = database['members']
 messages = database['messages']
 print('connexion time:', datetime.now()-t0)
-t0 = datetime.now()
-cursor = messages.find(projection=FIELDS)
-print('fetch time:', datetime.now()-t0)
-t0 = datetime.now()
-msg_list = [msg for msg in cursor]
-print('Making list time:', datetime.now()-t0)
 pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
-# Make and arrange DataFrame
-t0 = datetime.now()
-df = pd.DataFrame(msg_list)
-print('making df time:', datetime.now()-t0)
-t0 = datetime.now()
-for member in members.find():
-	df = df.replace(member['name'], member['pseudo'])
-print('replacing name time: ', datetime.now()-t0)
-t0 = datetime.now()
-df['date'] = pd.to_datetime(df["timestamp"], unit='ms')
-print('timestamp to datetime time: ', datetime.now()-t0)
+df = pd.DataFrame()
 connection.close()
 
 # Compile overall data on whole database
@@ -51,6 +35,7 @@ data['n_char'] = {pseudos[d['_id']] : d['n_char'] for d in list(messages.aggrega
 data['ratio_char_msg'] = {name : data['n_char'][name]/data['n_msg'][name] for name in pseudos.values()}
 data['ratio_word_msg'] = {name : data['n_word'][name]/data['n_msg'][name] for name in pseudos.values()}
 data['total_msg'] = list(messages.aggregate( [ { "$collStats": { "storageStats": { } } } ] ))[0]['storageStats']['count']
+print('mongo pipeline time:', datetime.now()-t0)
 data['date_min'] = min(df['timestamp'])
 data['date_max'] = max(df['timestamp'])
 data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['_id'].count()
