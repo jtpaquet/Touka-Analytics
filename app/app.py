@@ -34,52 +34,56 @@ def rawDB():
 	
 @app.route("/ToukaAnalytics")
 def ToukaAnalytics():
+
+	t0 = datetime.now()
 	connection = MongoClient(MONGODB_URI)
 	database = connection[DBS_NAME]
 	members = database['members']
 	messages = database['messages']
-
-	data = []
-	t0 = datetime.now()
-	for member in members.find():
-		name = member['name']
-		query_txt = {'$and': [ {'author': name}, {'content': {'$exists': True, '$ne': None } } ] }
-		query_react = {'$and': [ {'author': name}, {'reaction': {'$exists': True, '$ne': None } } ] }
-		fields = {'content': True, 'timestamp': True, 'type': True, 'reactions': True, '_id': False}
-        
-		fetched_data = list(messages.find(query_txt, fields))
-		
-		member_data = {}
-		for field in list(fields.keys())[:-1]:
-			if field == 'timestamp':
-				member_data[field] = list(map(lambda d: int(d[field]), fetched_data))
-			else:
-				member_data[field] = list(map(lambda d: d[field], fetched_data))
-			if field == 'content':
-				sum_char = 0
-				sum_word = 0
-				for msg in member_data[field]:
-					sum_char += len(msg)
-					sum_word += len(msg.split(' '))
-		
-		member_data['n_char'] = sum_char
-		member_data['n_word'] = sum_word
-		member_data['n_msg'] = len(member_data['content'])
-		member_data['ratio_char_msg'] = member_data['n_char'] / member_data['n_msg']
-		member_data['name'] = member['pseudo']
-
-		data.append(member_data)
-
-	t1 = datetime.now()
-	print("total fetch data time:", t1-t0)
-	df = pd.DataFrame(data, columns=('name', 'content', 'timestamp', 'type', 'reactions', 'n_msg', 'n_char', 'n_word', 'ratio_char_msg'))
-	df = df.set_index('name')
-
-	df = df.drop(columns=["content", "type", "reactions"])
-	
-	df_json = json.dumps(df.to_json(), default=json_util.default)
+	print('connexion time:', datetime.now()-t0)
+	pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
+	df = pd.DataFrame()
 	connection.close()
-	return df_json
+
+	# Compile overall data on whole database
+	t0 = datetime.now()
+	data = {}
+	data['n_msg'] = {pseudos[d['_id']] : d['count'] for d in list(messages.aggregate([{"$sortByCount": "$author"}]))}
+	n_word_pipeline = [{"$match": {"content": {"$exists":True}}},{"$project": {"author": 1, "n_word": {"$size": {"$split": ["$content", " "]}}}}, {"$group" : { "_id" : "$author", "n_word" : {"$sum":"$n_word"}}}]
+	data['n_word'] = {pseudos[d['_id']] : d['n_word'] for d in list(messages.aggregate(n_word_pipeline))}
+	n_char_pipeline = [{"$match": {"content": {"$exists":True}}},{"$project": {"author": 1, "n_char": {"$strLenCP" : "$content"}}}, {"$group" : { "_id" : "$author", "n_char" : {"$sum":"$n_char"}}}]
+	data['n_char'] = {pseudos[d['_id']] : d['n_char'] for d in list(messages.aggregate(n_char_pipeline))}
+	data['ratio_char_msg'] = {name : data['n_char'][name]/data['n_msg'][name] for name in pseudos.values()}
+	data['ratio_word_msg'] = {name : data['n_word'][name]/data['n_msg'][name] for name in pseudos.values()}
+	data['total_msg'] = list(messages.aggregate( [ { "$collStats": { "storageStats": { } } } ] ))[0]['storageStats']['count']
+	data['date_min'] = list(messages.aggregate([{"$group":{"_id": {}, "date_min": { "$min": "$timestamp" }}}]))[0]['date_min']
+	data['date_max'] = list(messages.aggregate([{"$group":{"_id": {}, "date_max": { "$max": "$timestamp" }}}]))[0]['date_max']
+	print('mongo pipeline time:', datetime.now()-t0)
+	msg_by_month_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%m-%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
+	msg_by_year_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
+	msg_by_author_by_hour_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "hour": {"$dateToString": { "format": "%H", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+	msg_by_author_by_weekday_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "weekday": {"$dateToString": { "format": "%w", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+	msg_by_author_by_month_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "date": {"$dateToString": { "format": "%m-%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+	msg_by_author_by_year_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "year": {"$dateToString": { "format": "%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+	# Faire les groupes par hour, weekday et month
+	data['n_msg_by_hour'] = {(d['_id']['author'], d['_id']['hour'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_hour_pipeline)}
+	data['n_msg_by_weekday'] = {(d['_id']['author'], d['_id']['weekday'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_weekday_pipeline)}
+	data['n_msg_by_month'] = {(d['_id']['author'], d['_id']['date'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_month_pipeline)}
+	data['n_msg_by_year'] = {(d['_id']['author'], d['_id']['year'] ) :  d['n_msg'] for d in messages.aggregate(msg_by_author_by_year_pipeline)}
+	data['total_msg_by_month'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_month_pipeline)}
+	data['total_msg_by_year'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_year_pipeline)}
+
+	for stat in ["n_msg_by_hour", "n_msg_by_weekday", "n_msg_by_month", "n_msg_by_year"]: # Transform in nested dict for further json conversion
+	new_dict = {}
+	for key, value in data[stat].items():
+		author, date = key
+		if author not in new_dict.keys():
+			new_dict[author] = {}
+		new_dict[author][date] = value
+	data[stat] = new_dict
+	# Faire les reactions
+	print('compiling data time: ', datetime.now()-t0)
+	return json.dumps(data)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True)
