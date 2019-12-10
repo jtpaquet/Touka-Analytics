@@ -52,7 +52,7 @@ def ToukaAnalytics():
 	# Compile overall data on whole database
 	t0 = datetime.now()
 	data = {}
-	data['n_msg'] = {d['_id'] : d['count'] for d in list(messages.aggregate([{"$sortByCount": "$author"}])}
+	data['n_msg'] = {d['_id'] : d['count'] for d in list(messages.aggregate([{"$sortByCount": "$author"}]))}
 	data['n_word'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg).split(' ')) for msg in x]))
 	data['n_char'] = df.groupby(['author'])['content'].agg(lambda x: sum([len(str(msg)) for msg in x]))
 	data['ratio_char_msg'] = data['n_char'] / data['n_msg']
@@ -83,21 +83,3 @@ def ToukaAnalytics():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True)
-
-def count_word(df_):
-	s = 0
-	for msg in df_['content']:
-		s += len(msg.split(' '))
-	return 
-	
-def count_char(df_):
-	s = 0
-	for msg in df_['content']:
-		s += len(msg)
-	return s
-
-def count_total_msg(df_):
-	s = 0
-	for count in pd.DatetimeIndex(df_['date']).to_period("M").count():
-		s += count
-	return s

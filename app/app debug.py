@@ -38,24 +38,27 @@ data['total_msg'] = list(messages.aggregate( [ { "$collStats": { "storageStats":
 data['date_min'] = list(messages.aggregate([{"$group":{"_id": {}, "date_min": { "$min": "$timestamp" }}}]))[0]['date_min']
 data['date_max'] = list(messages.aggregate([{"$group":{"_id": {}, "date_max": { "$max": "$timestamp" }}}]))[0]['date_max']
 print('mongo pipeline time:', datetime.now()-t0)
-date_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%m-%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
+msg_by_month_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%m-%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
+msg_by_month_by_author_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "date": {"$dateToString": { "format": "%m-%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+msg_by_author_by_hour_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "hour": {"$dateToString": { "format": "%H", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+msg_by_author_by_weekday_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "weekday": {"$dateToString": { "format": "%w", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
 # Faire les groupes par hour, weekday et month
-data['n_msg_by_hour'] = df.groupby(['author', df['date'].dt.hour])['_id'].count()
-data['n_msg_by_weekday'] = df.groupby(['author', df['date'].dt.dayofweek])['_id'].count()
-data['n_msg_by_month'] = df.groupby(['author', pd.DatetimeIndex(df['date']).to_period("M")])['date'].count()
-data['total_msg_by_month'] = df.groupby(pd.DatetimeIndex(df['date']).to_period("M"))['_id'].count()
+data['n_msg_by_hour'] = {(d['_id']['author'], d['_id']['hour'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_hour_pipeline)}
+data['n_msg_by_weekday'] = {(d['_id']['author'], d['_id']['weekday'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_weekday_pipeline)}
+data['n_msg_by_month'] = {(d['_id']['author'], d['_id']['date'] ) : d['n_msg'] for d in messages.aggregate(msg_by_month_by_author_pipeline)}
+data['total_msg_by_month'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_month_pipeline)}
 # Faire les reactions
-for key in data.keys():
-	if key not in ['total_msg', 'date_min', 'date_max']:
-		if key in ['n_msg_by_hour', 'n_msg_by_weekday']:
-			data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
-		elif key == 'n_msg_by_month':
-			data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
-			for author in pseudos:
-				data[key][author] = {k.strftime("%Y-%m"): v for k,v in data[key][author].items()}
-		elif key == 'total_msg_by_month':
-			data[key] = {k.strftime("%Y-%m"): v for k, v in data[key].items()}
-		else:
-			data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
+# for key in data.keys():
+# 	if key not in ['total_msg', 'date_min', 'date_max']:
+# 		if key in ['n_msg_by_hour', 'n_msg_by_weekday']:
+# 			data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
+# 		elif key == 'n_msg_by_month':
+# 			data[key] = {k: v.droplevel(0).to_dict() for k, v in data[key].groupby(level=0)}
+# 			for author in pseudos:
+# 				data[key][author] = {k.strftime("%Y-%m"): v for k,v in data[key][author].items()}
+# 		elif key == 'total_msg_by_month':
+# 			data[key] = {k.strftime("%Y-%m"): v for k, v in data[key].items()}
+# 		else:
+# 			data[key] = data[key].to_dict() # Transform series objects to dict for further json conversion
 print('compiling data time: ', datetime.now()-t0)
 json.dumps(data)
