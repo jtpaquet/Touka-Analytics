@@ -24,15 +24,16 @@ X Changer l'activité par une moyenne mobile ouais ouais
 X Faire un script pour créer dataframe et un autre pour le lire pcq c'est trop lourd
 X ToukaAnalytics reste cancéreux
 - Faire un radar plot pour chaque touka
-- Changer l'analyse pour un pipeline directement dans MongoDB au lieu de le faire client side
+X Changer l'analyse pour un pipeline directement dans MongoDB au lieu de le faire client side
 - Faire les graphiques avec d3.js
+- Revoir les messages by hour pcq ça fait pas de sens
 
 APP
 ===
 
 o Trouver comment marche Django/Flask
 - Implémenter les querys dans le UI
-- Updater le code pour la création de graphiques avec MongoEngine
+X Updater le code pour la création de graphiques avec MongoEngine
 - Implémenter les analytics dans l'app
 X Hoster la DB sur Atlas / google cloud
 - Reprendre un domain

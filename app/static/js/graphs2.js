@@ -1,51 +1,17 @@
 queue()
 	.defer(d3.json, "/ToukaAnalytics")
-	.defer(d3.json, "/members")
     .await(makeGraphs);
 
-function makeGraphs(error, projectsJson, membersJson) {
+function makeGraphs(error, dataJson) {
 	
-	//Clean projectsJson data
-	var toukaData = projectsJson;
-	var membersData = {};
-	membersJson.forEach(function(d) {
-		membersData[d['name']] = d['pseudo'];
-	});
-	var dateFormat = d3.time.format("%Y-%m");
+	//Clean dataJson data
+	var toukaData = dataJson;
+	var dateFormat = d3.time.format("%m-%Y");
 	var timeFormat = d3.time.format("%a %d %b %Y à %Hh%Mm%ss");
-	toukaData.forEach(function(d) {
-		d["timestamp"] = new Date(d['timestamp']);
-		d["month"] = dateFormat(new Date(d['timestamp']));
-		d['author'] = membersData[d['author']];
-	});
-
-	//Create a Crossfilter instance
-	var ndx = crossfilter(toukaData);
-
-	//Define Dimensions
-	var authorDim = ndx.dimension(function(d) { return d.author });
-	// Si je veux avoir tous les messages écrits par un auteur, je fais authorDim.filter('author')
-	var dateDim = ndx.dimension(function(d) { return d.timestamp });
-	var monthDim = ndx.dimension(function(d) { return d.month });
-	var typeDim = ndx.dimension(function(d) { return d.type });
-	// var contentDim = ndx.dimension(function(d) { return d.content }); // On en a pas vrm besoin
-
-	//Calculate metrics
-	var msgByAuthor = authorDim.group();
-	var n_msgByAuthor = msgByAuthor.top(msgByAuthor.size());
-	// msgByAuthor.reduceCount().all()
-	// var msgByDate = dateDim.group(); // pas besoin
-	var msgByMonth = monthDim.group();
-	var msgByType = typeDim.group();
-	// msgByType.reduceCount().all()
-	// var msgByContent = contentDim.group(); // pas besoin
-
-	var all = ndx.groupAll();
-	var totalMsg = all.reduceCount().value();
-
+	console.log(toukaData);
 	//Define values (to be used in charts)
-	var minDate = dateDim.bottom(1)[0]["timestamp"];
-	var maxDate = dateDim.top(1)[0]["timestamp"];
+	var minDate = toukaData['date_min'];
+	var maxDate = toukaData['date_max'];
 	var minMonth = monthDim.bottom(1)[0]["month"];
 	var maxMonth = monthDim.top(1)[0]["month"];
 
@@ -66,13 +32,11 @@ function makeGraphs(error, projectsJson, membersJson) {
 	msgCountChart
 		.width(300)
 		.height(280)
-		.x(d3.scale.ordinal().domain(n_msgByAuthor.map(function(d) {return d.key })))
-		.y(d3.scale.linear().domain([0, 55000]))
+		.x(d3.scale.ordinal().domain(toukaData["n_msg"].map(function(d) {return d.key })))
+		.y(d3.scale.linear().domain([0, max(toukaData["n_msg"])+5000]))
 		.xUnits(dc.units.ordinal)
 		.brushOn(false)
 		.yAxisLabel("Messages envoyés")
-		.dimension(authorDim)
-		.group(msgByAuthor)
 		
 	totalMsgND
 		.formatNumber(d3.format("d"))

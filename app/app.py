@@ -74,15 +74,16 @@ def ToukaAnalytics():
 	data['total_msg_by_year'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_year_pipeline)}
 
 	for stat in ["n_msg_by_hour", "n_msg_by_weekday", "n_msg_by_month", "n_msg_by_year"]: # Transform in nested dict for further json conversion
-	new_dict = {}
-	for key, value in data[stat].items():
-		author, date = key
-		if author not in new_dict.keys():
-			new_dict[author] = {}
-		new_dict[author][date] = value
-	data[stat] = new_dict
+		new_dict = {}
+		for key, value in data[stat].items():
+			author, date = key
+			if author not in new_dict.keys():
+				new_dict[author] = {}
+			new_dict[author][date] = value
+		data[stat] = new_dict
 	# Faire les reactions
 	print('compiling data time: ', datetime.now()-t0)
+	print("Data compiled")
 	return json.dumps(data)
 
 if __name__ == "__main__":
