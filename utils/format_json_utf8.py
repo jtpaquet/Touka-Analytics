@@ -2,7 +2,7 @@ import os
 import sys
 
 
-src_filename = "unicode_touka.json"
+src_filename = "touka_10dec2019.json"
 dst_filename = "utf_touka.json"
 
 with open(src_filename, 'r') as src_file:

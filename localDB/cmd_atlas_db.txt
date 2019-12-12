@@ -1,3 +1,6 @@
+C:\Program Files\MongoDB\Server\4.2\bin
+
+
 Import un jsonarray vers mongodb en local:
 
 mongoimport --jsonArray --uri "mongodb://localhost" -db "essai" --collection "messages" --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\Touka analytics\LocalDB\messages.json"
@@ -17,3 +20,12 @@ mongoimport --host localhost --db essai --collection messages --file C:\Users\jt
 
 
 localhost URI: mongodb://localhost/
+
+import file to atlas
+
+mongoimport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection messages_10dec19 --type json --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\ToukaAnalytics\utils\utf_touka.json" --jsonArray
+
+Dans Atlas:
+
+mongodb+srv://jtpaquet:pv9E9SB5gAVzKWbW@toukaanalytics-epm7v.gcp.mongodb.net/test
+
