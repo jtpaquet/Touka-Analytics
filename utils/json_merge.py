@@ -1,5 +1,6 @@
 import os
 import json
+import codecs
 
 def parse_obj(obj):
     for key in obj:
@@ -22,7 +23,5 @@ all_data = [item for sublist in all_data for item in sublist]
 
 
 with open(os.path.join("utils", "touka_10dec2019.json"), "w") as json_file:
-    # json.dump(all_data, f, indent=4, sort_keys=True, ensure_ascii=False)
-    json_string = json.dumps(all_data, ensure_ascii=False).encode('utf8').decode('utf8')
-    json.dump(json_string, json_file, ensure_ascii=False)
+    json.dump(all_data, json_file, indent=4, sort_keys=True)
 
