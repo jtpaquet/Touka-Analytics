@@ -39,10 +39,9 @@ def ToukaAnalytics():
 	connection = MongoClient(MONGODB_URI)
 	database = connection[DBS_NAME]
 	members = database['members']
-	messages = database['messages_10dec19']
+	messages = database['messages']
 	print('connexion time:', datetime.now()-t0)
 	pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
-	df = pd.DataFrame()
 	connection.close()
 
 	# Compile overall data on whole database
@@ -87,4 +86,4 @@ def ToukaAnalytics():
 	return json.dumps(data)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=5000,debug=True)
+    app.run(threaded=True, port=5000)

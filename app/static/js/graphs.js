@@ -12,37 +12,75 @@ function makeGraphs(error, dataJson) {
 	//Define values (to be used in charts)
 	var minDate = toukaData['date_min'];
 	var maxDate = toukaData['date_max'];
-	var minMonth = monthDim.bottom(1)[0]["month"];
-	var maxMonth = monthDim.top(1)[0]["month"];
+	var minMonth = dateFormat(new Date(minDate))
+	var maxMonth = dateFormat(new Date(maxDate))
 
     //Charts
-	var timeChart = dc.lineChart("#time-chart");
-	var msgCountChart = dc.barChart("#msg-count-row-chart");
-	var msgPctChart = dc.pieChart('#poverty-level-row-chart')
-	var totalMsgND = dc.numberDisplay("#total-msg-nd");
-	var toukaCreation = timeFormat(minDate);
+	// var timeChart = dc.lineChart("#time-chart");
+	var msgCountBarChart = dc.barChart("#msg-count-row-chart");
+	// var msgCountPieChart = dc.pieChart('#msg-count-pie-chart')
+	// var totalMsgND = dc.numberDisplay("#total-msg-nd");
+	var toukaCreation = timeFormat(new Date(minDate));
 
-	timeChart
-		.width(600)
-		.height(160)
-		.x(d3.scale.linear().domain())
-		.y()
+	// timeChart
+	// 	.width(600)
+	// 	.height(160)
+	// 	.x(d3.scale.linear().domain())
+	// 	.y()
 
+	var data_n_msg = [];
+	for(var key in toukaData["n_msg"]) {
+		if ((key != "Kaven") && (key != "Marcel Leboeuf") && (key != "Charles Pilon")) {
+			data_n_msg.push({"author":key, "count":toukaData["n_msg"][key]});
+		}
+	};
+	
+	var ndx = crossfilter(data_n_msg);
+	authorDimension = ndx.dimension(function(d) {return d.author;});
+	authorGroup = authorDimension.group().reduceSum(function(d) {return d.count;});
+	
+	var names = [];
+	authorGroup.top(Infinity).forEach(function(d) {names.push(d.author)});
 
-	msgCountChart
+	msgCountBarChart
 		.width(300)
-		.height(280)
-		.x(d3.scale.ordinal().domain(toukaData["n_msg"].map(function(d) {return d.key })))
-		.y(d3.scale.linear().domain([0, max(toukaData["n_msg"])+5000]))
+		.height(250)
+		.x(d3.scale.ordinal())
 		.xUnits(dc.units.ordinal)
+		// .y(d3.scale.linear().domain([0, Math.ceil(Math.max(...Object.values(authorGroup.top(1)[0].value)) / 10000) * 10000]))
+		.renderlet(function (chart) {
+			chart.selectAll("g.x text")
+			.attr('dx', '-30')
+			.attr('transform', "rotate(-45)");
+		})
 		.brushOn(false)
 		.yAxisLabel("Messages envoyés")
+		.dimension(authorDimension)
+		.group(authorGroup)
+
+	msgCountBarChart.ordering(function(d) { return -d.value; })
+
+
+	// msgCountPieChart
+	// 	.width(300)
+	// 	.height(250)
+	// 	.x(d3.scale.ordinal())
+	// 	.xUnits(dc.units.ordinal)
+	// 	// .y(d3.scale.linear().domain([0, Math.ceil(Math.max(...Object.values(authorGroup.top(1)[0].value)) / 10000) * 10000]))
+	// 	.renderlet(function (chart) {
+	// 		chart.selectAll("g.x text")
+	// 		.attr('dx', '-30')
+	// 		.attr('transform', "rotate(-45)");
+	// 	})
+	// 	.brushOn(false)
+	// 	.yAxisLabel("Messages envoyés")
+	// 	.dimension(authorDimension)
+	// 	.group(authorGroup);
 		
-	totalMsgND
-		.formatNumber(d3.format("d"))
-		.valueAccessor(function(d){return d; })
-		.group(all)
-		.formatNumber(d3.format(".3s"));
+	// totalMsgND
+	// 	.formatNumber(d3.format("d"))
+	// 	.valueAccessor(function(d){return d; })
+	// 	.formatNumber(d3.format(".3s"));
 	
 	// timeChart
 	// 	.width(600)

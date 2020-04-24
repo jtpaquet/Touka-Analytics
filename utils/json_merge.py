@@ -2,16 +2,7 @@ import os
 import json
 import codecs
 
-def parse_obj(obj):
-    for key in obj:
-        if isinstance(obj[key], str):
-            obj[key] = obj[key].encode('latin_1').decode('utf-8')
-        elif isinstance(obj[key], list):
-            obj[key] = list(map(lambda x: x if type(x) != str else x.encode('latin_1').decode('utf-8'), obj[key]))
-        pass
-    return obj
-
-files = [os.path.join("utils", "touka 10dec2019", "message_{}.json".format(i+1)) for i in range(17)]
+files = [os.path.join("utils", "touka_23avril", "message_{}.json".format(i+1)) for i in range(19)]
 all_data = []
 
 for file in files:
@@ -22,6 +13,6 @@ for file in files:
 all_data = [item for sublist in all_data for item in sublist]
 
 
-with open(os.path.join("utils", "touka_10dec2019.json"), "w") as json_file:
+with open(os.path.join("utils", "touka_23avril2020.json"), "w") as json_file:
     json.dump(all_data, json_file, indent=4, sort_keys=True)
 

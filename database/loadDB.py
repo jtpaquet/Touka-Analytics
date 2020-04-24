@@ -10,16 +10,15 @@ db = connect('ToukaAnalytics')
 # Reset DB
 db.drop_database('ToukaAnalytics')
 
-data = json.load(codecs.open('touka.json', 'r', 'utf-8')
-                 )  # Pour avoir les caractères spéciaux
+data = json.load(codecs.open('messages.json', 'r', 'utf-8'))  # Pour avoir les caractères spéciaux
 
-for participant in data['participants']:
-    Members(name=participant['name']).save()
+# for participant in data['participants']:
+#     Members(name=participant['name']).save()
 i=1
 
 t_0 = datetime.now()
 
-for message in data['messages']:
+for message in data:
     if not i%500:
         delta_t = datetime.now()-t_0
         progression = i / len(data['messages'])

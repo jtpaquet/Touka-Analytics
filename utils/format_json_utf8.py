@@ -3,7 +3,7 @@ import json
 import codecs
 
 
-src_filename = os.path.join("utils","touka_10dec2019.json")
+src_filename = os.path.join("utils","touka_23avril2020.json")
 dst_filename = os.path.join("messages.json")
 
 with open(src_filename, 'r') as src_file:
@@ -13,7 +13,11 @@ with open(src_filename, 'r') as src_file:
             if 'content' in msg.keys():
                 msg['content'] = msg['content'].encode('latin1').decode('utf-8', errors="replace")
             if 'sender_name' in msg.keys():
-                msg['sender_name'] = msg['sender_name'].encode('latin1').decode('utf-8', errors="replace")
+                msg['author'] = msg['sender_name'].encode('latin1').decode('utf-8', errors="replace")
+                del msg['sender_name']
+            if 'timestamp_ms' in msg.keys():
+                msg['timestamp'] = msg['timestamp_ms']
+                del msg['timestamp_ms']
             if 'reactions' in msg.keys():
                 for reaction in msg['reactions']:
                     reaction['actor'] = reaction['actor'].encode('latin1').decode('utf-8', errors="replace")

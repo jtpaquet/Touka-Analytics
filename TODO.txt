@@ -27,6 +27,15 @@ X ToukaAnalytics reste cancéreux
 X Changer l'analyse pour un pipeline directement dans MongoDB au lieu de le faire client side
 - Faire les graphiques avec d3.js
 - Revoir les messages by hour pcq ça fait pas de sens
+- NEW GRAPHS: 
+	- Histogram msg total par heure de la journée ( 2 personne genre, 3max)
+	- Heat map time of the day (par tranches de 2h en , et jour de la semaine en x)
+	- Activity by time of the day radar chart
+	- Averages : avg word per msg, avg char per msg, avg msg per day, avg char per day, total msg
+	- Most active day, most active month, most active year
+	- Topography mountains (x: month, y: years, z:msg)
+	- Chords diagram (relation entre emotes données/reçus)
+
 
 APP
 ===

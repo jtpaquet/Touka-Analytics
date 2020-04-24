@@ -7,10 +7,14 @@ PROCÉDURE POUR UPDATER LA DB AVEC DES NOUVELLES DONNÉES
 
 3. Changer l'encodage pour permettre les caractères spéciaux avec utils\format_json_utf8.py
 
-fichier de sortie: touka_(date).json
+fichier de sortie: messages_(date).json
 
 4. import les nouvelles données dans la DB
 
-mongoimport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection messages_10dec19 --type json --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\ToukaAnalytics\utils\utf_touka.json" --jsonArray
+C:\Program Files\MongoDB\Server\4.2\bin
+
+mongoimport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection messages_23avril2020 --type json --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\ToukaAnalytics\messages.json" --jsonArray
+
+mongoimport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection members --type json --file "C:\Users\jtpaq\Documents\Ordine\Documents\Touka on est peo memes\ToukaAnalytics\members.json" --jsonArray
 
 filename entre ""
