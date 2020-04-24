@@ -1,4 +1,3 @@
-import pandas as pd
 from datetime import datetime
 from flask import Flask
 from flask import render_template
@@ -21,7 +20,6 @@ members = database['members']
 messages = database['messages']
 print('connexion time:', datetime.now()-t0)
 pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
-df = pd.DataFrame()
 connection.close()
 
 # Compile overall data on whole database
@@ -45,22 +43,40 @@ msg_by_author_by_weekday_pipeline = pipeline = [{"$project": {"author": 1, "date
 msg_by_author_by_month_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "date": {"$dateToString": { "format": "%m-%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
 msg_by_author_by_year_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "year": {"$dateToString": { "format": "%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
 # Faire les groupes par hour, weekday et month
-data['n_msg_by_hour'] = {(d['_id']['author'], d['_id']['hour'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_hour_pipeline)}
-data['n_msg_by_weekday'] = {(d['_id']['author'], d['_id']['weekday'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_weekday_pipeline)}
-data['n_msg_by_month'] = {(d['_id']['author'], d['_id']['date'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_month_pipeline)}
-data['n_msg_by_year'] = {(d['_id']['author'], d['_id']['year'] ) :  d['n_msg'] for d in messages.aggregate(msg_by_author_by_year_pipeline)}
-data['total_msg_by_month'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_month_pipeline)}
-data['total_msg_by_year'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_year_pipeline)}
+# data['n_msg_by_hour'] = {(d['_id']['author'], d['_id']['hour'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_hour_pipeline)}
+# data['n_msg_by_weekday'] = {(d['_id']['author'], d['_id']['weekday'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_weekday_pipeline)}
+# data['n_msg_by_month'] = {(d['_id']['author'], d['_id']['date'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_month_pipeline)}
+# data['n_msg_by_year'] = {(d['_id']['author'], d['_id']['year'] ) :  d['n_msg'] for d in messages.aggregate(msg_by_author_by_year_pipeline)}
+# data['total_msg_by_month'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_month_pipeline)}
+# data['total_msg_by_year'] = {d['_id']: d['n_msg'] for d in messages.aggregate(msg_by_year_pipeline)}
+data['n_msg_by_hour'] = list(messages.aggregate(msg_by_author_by_hour_pipeline))
+data['n_msg_by_weekday'] = list(messages.aggregate(msg_by_author_by_weekday_pipeline))
+data['n_msg_by_month'] = list(messages.aggregate(msg_by_author_by_month_pipeline))
+data['n_msg_by_year'] = list(messages.aggregate(msg_by_author_by_year_pipeline))
+data['total_msg_by_month'] = list(messages.aggregate(msg_by_month_pipeline))
+data['total_msg_by_year'] = list(messages.aggregate(msg_by_year_pipeline))
+# Reactions
+react_received_by_author_pipeline = [{ "$group": {"_id": "$author", "count": {"$sum":  {"$size": "$reactions"}}} }]
+data['react_received_by_author'] = list(messages.aggregate(react_received_by_author_pipeline))
+react_received_by_author_and_type_pipeline = [{"$unwind": "$reactions"}, {"$group": {"_id": {"author":"$author", "reaction": "$reactions.reaction" }, "count": {"$sum":1}}}]
+data['react_received_by_author_and_type'] = list(messages.aggregate(react_received_by_author_and_type_pipeline))
+react_made_by_actor_pipeline = [{"$unwind": "$reactions"}, {"$sortByCount": "$reactions.actor"}]
+data['react_made_by_actor'] = list(messages.aggregate(react_made_by_actor_pipeline))
+react_made_by_actor_and_reaction_pipeline = [{"$unwind": "$reactions"}, {"$group": {"_id": {"actor":"$reactions.actor", "reaction": "$reactions.reaction" }, "count": {"$sum":1}}}]
+data['react_made_by_actor_and_reaction'] = list(messages.aggregate(react_made_by_actor_and_reaction_pipeline))
+react_made_by_reaction_pipeline = [{"$unwind": "$reactions"}, {"$sortByCount": "$reactions.reaction"}]
+data['react_made_by_reaction'] = list(messages.aggregate(react_made_by_reaction_pipeline))
 
-for stat in ["n_msg_by_hour", "n_msg_by_weekday", "n_msg_by_month", "n_msg_by_year"]: # Transform in nested dict for further json conversion
-	new_dict = {}
-	for key, value in data[stat].items():
-		author, date = key
-		if author not in new_dict.keys():
-			new_dict[author] = {}
-		new_dict[author][date] = value
-	data[stat] = new_dict
-# Faire les reactions
+# for stat in ["n_msg_by_hour", "n_msg_by_weekday", "n_msg_by_month", "n_msg_by_year"]: # Transform in nested dict for further json conversion
+# 	new_dict = {}
+# 	for key, value in data[stat].items():
+# 		author, date = key
+# 		if author not in new_dict.keys():
+# 			new_dict[author] = {}
+# 		new_dict[author][date] = value
+# 	data[stat] = new_dict
 print('compiling data time: ', datetime.now()-t0)
-json.dumps(data)
-print("bruh")
+print("Data compiled")
+
+with open('json_data.djezeune', 'w') as file:
+    file.write(json.dumps(data, indent=4, sort_keys=True))

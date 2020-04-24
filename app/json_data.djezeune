@@ -1,0 +1,6575 @@
+{
+    "date_max": 1575674680700,
+    "date_min": 1412472182139,
+    "n_char": {
+        "Charles Pilon": 25,
+        "Dj\u00e9zeune": 1754203,
+        "Godbout": 20922,
+        "Jirome": 120545,
+        "Kaven": 324,
+        "Krostif": 236429,
+        "Lakasse": 555025,
+        "Marcel Leboeuf": 34,
+        "M\u00e9ganie": 167005,
+        "Pierre-Poom": 839620,
+        "Roulo": 1544747,
+        "Vinssan": 25660
+    },
+    "n_msg": {
+        "Charles Pilon": 1,
+        "Dj\u00e9zeune": 55132,
+        "Godbout": 811,
+        "Jirome": 3556,
+        "Kaven": 20,
+        "Krostif": 4848,
+        "Lakasse": 21184,
+        "Marcel Leboeuf": 1,
+        "M\u00e9ganie": 4364,
+        "Pierre-Poom": 20716,
+        "Roulo": 51172,
+        "Vinssan": 1468
+    },
+    "n_msg_by_hour": [
+        {
+            "_id": {
+                "author": "Marcel Leboeuf",
+                "hour": "19"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "17"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "12"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "08"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "15"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "19"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "04"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "08"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "06"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "12"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "15"
+            },
+            "n_msg": 14
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "06"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "11"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "10"
+            },
+            "n_msg": 50
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "03"
+            },
+            "n_msg": 72
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "06"
+            },
+            "n_msg": 279
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "02"
+            },
+            "n_msg": 150
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "11"
+            },
+            "n_msg": 75
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "05"
+            },
+            "n_msg": 17
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "02"
+            },
+            "n_msg": 1123
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "16"
+            },
+            "n_msg": 1221
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "23"
+            },
+            "n_msg": 244
+        },
+        {
+            "_id": {
+                "author": "Charles Pilon",
+                "hour": "05"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "05"
+            },
+            "n_msg": 1051
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "16"
+            },
+            "n_msg": 258
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "02"
+            },
+            "n_msg": 286
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "04"
+            },
+            "n_msg": 1369
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "02"
+            },
+            "n_msg": 2884
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "00"
+            },
+            "n_msg": 354
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "18"
+            },
+            "n_msg": 200
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "11"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "23"
+            },
+            "n_msg": 43
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "15"
+            },
+            "n_msg": 858
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "13"
+            },
+            "n_msg": 1031
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "01"
+            },
+            "n_msg": 300
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "01"
+            },
+            "n_msg": 330
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "11"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "02"
+            },
+            "n_msg": 331
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "02"
+            },
+            "n_msg": 1486
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "01"
+            },
+            "n_msg": 1487
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "03"
+            },
+            "n_msg": 717
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "08"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "20"
+            },
+            "n_msg": 358
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "12"
+            },
+            "n_msg": 288
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "17"
+            },
+            "n_msg": 265
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "14"
+            },
+            "n_msg": 715
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "23"
+            },
+            "n_msg": 4829
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "23"
+            },
+            "n_msg": 1770
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "21"
+            },
+            "n_msg": 298
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "14"
+            },
+            "n_msg": 782
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "16"
+            },
+            "n_msg": 2409
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "11"
+            },
+            "n_msg": 18
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "08"
+            },
+            "n_msg": 13
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "05"
+            },
+            "n_msg": 103
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "00"
+            },
+            "n_msg": 110
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "00"
+            },
+            "n_msg": 3682
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "09"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "15"
+            },
+            "n_msg": 692
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "00"
+            },
+            "n_msg": 294
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "07"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "01"
+            },
+            "n_msg": 129
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "18"
+            },
+            "n_msg": 311
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "05"
+            },
+            "n_msg": 545
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "03"
+            },
+            "n_msg": 57
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "17"
+            },
+            "n_msg": 1027
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "20"
+            },
+            "n_msg": 1384
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "21"
+            },
+            "n_msg": 3737
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "10"
+            },
+            "n_msg": 31
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "16"
+            },
+            "n_msg": 1212
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "22"
+            },
+            "n_msg": 381
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "00"
+            },
+            "n_msg": 5040
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "04"
+            },
+            "n_msg": 200
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "20"
+            },
+            "n_msg": 462
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "00"
+            },
+            "n_msg": 85
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "19"
+            },
+            "n_msg": 3158
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "04"
+            },
+            "n_msg": 105
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "05"
+            },
+            "n_msg": 35
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "23"
+            },
+            "n_msg": 397
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "23"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "13"
+            },
+            "n_msg": 37
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "16"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "18"
+            },
+            "n_msg": 206
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "22"
+            },
+            "n_msg": 2375
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "00"
+            },
+            "n_msg": 1794
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "19"
+            },
+            "n_msg": 3641
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "19"
+            },
+            "n_msg": 1325
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "23"
+            },
+            "n_msg": 3834
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "01"
+            },
+            "n_msg": 40
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "23"
+            },
+            "n_msg": 217
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "22"
+            },
+            "n_msg": 1897
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "03"
+            },
+            "n_msg": 3942
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "15"
+            },
+            "n_msg": 235
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "23"
+            },
+            "n_msg": 2140
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "01"
+            },
+            "n_msg": 4631
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "01"
+            },
+            "n_msg": 184
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "13"
+            },
+            "n_msg": 384
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "20"
+            },
+            "n_msg": 3851
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "22"
+            },
+            "n_msg": 4685
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "14"
+            },
+            "n_msg": 2096
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "22"
+            },
+            "n_msg": 4832
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "19"
+            },
+            "n_msg": 432
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "02"
+            },
+            "n_msg": 4606
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "17"
+            },
+            "n_msg": 268
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "19"
+            },
+            "n_msg": 237
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "09"
+            },
+            "n_msg": 59
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "20"
+            },
+            "n_msg": 341
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "08"
+            },
+            "n_msg": 59
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "18"
+            },
+            "n_msg": 3079
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "04"
+            },
+            "n_msg": 811
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "15"
+            },
+            "n_msg": 1846
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "20"
+            },
+            "n_msg": 3556
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "18"
+            },
+            "n_msg": 1172
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "19"
+            },
+            "n_msg": 1323
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "21"
+            },
+            "n_msg": 1667
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "15"
+            },
+            "n_msg": 276
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "14"
+            },
+            "n_msg": 347
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "13"
+            },
+            "n_msg": 703
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "10"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "17"
+            },
+            "n_msg": 1199
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "18"
+            },
+            "n_msg": 1076
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "21"
+            },
+            "n_msg": 364
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "12"
+            },
+            "n_msg": 802
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "17"
+            },
+            "n_msg": 3130
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "06"
+            },
+            "n_msg": 16
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "06"
+            },
+            "n_msg": 410
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "16"
+            },
+            "n_msg": 3131
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "01"
+            },
+            "n_msg": 1582
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "21"
+            },
+            "n_msg": 1526
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "21"
+            },
+            "n_msg": 4499
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "07"
+            },
+            "n_msg": 193
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "05"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "15"
+            },
+            "n_msg": 230
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "06"
+            },
+            "n_msg": 91
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "14"
+            },
+            "n_msg": 215
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "03"
+            },
+            "n_msg": 113
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "09"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "08"
+            },
+            "n_msg": 84
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "08"
+            },
+            "n_msg": 76
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "14"
+            },
+            "n_msg": 166
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "14"
+            },
+            "n_msg": 1371
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "07"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "13"
+            },
+            "n_msg": 408
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "11"
+            },
+            "n_msg": 373
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "21"
+            },
+            "n_msg": 328
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "03"
+            },
+            "n_msg": 2032
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "07"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "18"
+            },
+            "n_msg": 83
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "17"
+            },
+            "n_msg": 220
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "03"
+            },
+            "n_msg": 1181
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "10"
+            },
+            "n_msg": 151
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "07"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "16"
+            },
+            "n_msg": 321
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "03"
+            },
+            "n_msg": 96
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "15"
+            },
+            "n_msg": 2612
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "05"
+            },
+            "n_msg": 89
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "05"
+            },
+            "n_msg": 20
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "04"
+            },
+            "n_msg": 55
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "22"
+            },
+            "n_msg": 303
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "18"
+            },
+            "n_msg": 2617
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "09"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "12"
+            },
+            "n_msg": 39
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "04"
+            },
+            "n_msg": 424
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "13"
+            },
+            "n_msg": 77
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "03"
+            },
+            "n_msg": 317
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "13"
+            },
+            "n_msg": 84
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "12"
+            },
+            "n_msg": 20
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "12"
+            },
+            "n_msg": 161
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "19"
+            },
+            "n_msg": 315
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "18"
+            },
+            "n_msg": 45
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "12"
+            },
+            "n_msg": 361
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "00"
+            },
+            "n_msg": 2096
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "12"
+            },
+            "n_msg": 40
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "00"
+            },
+            "n_msg": 262
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "20"
+            },
+            "n_msg": 61
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "12"
+            },
+            "n_msg": 27
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "17"
+            },
+            "n_msg": 2925
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "22"
+            },
+            "n_msg": 89
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "23"
+            },
+            "n_msg": 110
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "17"
+            },
+            "n_msg": 126
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "21"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "11"
+            },
+            "n_msg": 94
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "19"
+            },
+            "n_msg": 101
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "17"
+            },
+            "n_msg": 46
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "22"
+            },
+            "n_msg": 410
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "15"
+            },
+            "n_msg": 114
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "14"
+            },
+            "n_msg": 81
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "11"
+            },
+            "n_msg": 94
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "06"
+            },
+            "n_msg": 58
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "10"
+            },
+            "n_msg": 12
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "10"
+            },
+            "n_msg": 40
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "04"
+            },
+            "n_msg": 2603
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "hour": "01"
+            },
+            "n_msg": 3130
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "06"
+            },
+            "n_msg": 21
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "13"
+            },
+            "n_msg": 76
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "21"
+            },
+            "n_msg": 112
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "07"
+            },
+            "n_msg": 239
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "09"
+            },
+            "n_msg": 61
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "07"
+            },
+            "n_msg": 104
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "hour": "09"
+            },
+            "n_msg": 56
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "19"
+            },
+            "n_msg": 47
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "hour": "16"
+            },
+            "n_msg": 194
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "hour": "09"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "16"
+            },
+            "n_msg": 92
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "05"
+            },
+            "n_msg": 303
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "13"
+            },
+            "n_msg": 9
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "22"
+            },
+            "n_msg": 70
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "04"
+            },
+            "n_msg": 24
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "hour": "07"
+            },
+            "n_msg": 19
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "hour": "18"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "09"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "14"
+            },
+            "n_msg": 11
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "hour": "20"
+            },
+            "n_msg": 1541
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "20"
+            },
+            "n_msg": 81
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "02"
+            },
+            "n_msg": 58
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "hour": "06"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "10"
+            },
+            "n_msg": 9
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "hour": "02"
+            },
+            "n_msg": 88
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "21"
+            },
+            "n_msg": 99
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "hour": "16"
+            },
+            "n_msg": 50
+        }
+    ],
+    "n_msg_by_month": [
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2014"
+            },
+            "n_msg": 325
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2014"
+            },
+            "n_msg": 1117
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2014"
+            },
+            "n_msg": 260
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2014"
+            },
+            "n_msg": 281
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "11-2014"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2014"
+            },
+            "n_msg": 584
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "11-2014"
+            },
+            "n_msg": 84
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "10-2017"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2014"
+            },
+            "n_msg": 763
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2017"
+            },
+            "n_msg": 452
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2017"
+            },
+            "n_msg": 886
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "04-2017"
+            },
+            "n_msg": 399
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "01-2019"
+            },
+            "n_msg": 1068
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2017"
+            },
+            "n_msg": 344
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "11-2017"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2019"
+            },
+            "n_msg": 7
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "01-2018"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "08-2018"
+            },
+            "n_msg": 85
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "09-2016"
+            },
+            "n_msg": 868
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "01-2018"
+            },
+            "n_msg": 155
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "01-2018"
+            },
+            "n_msg": 79
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "04-2018"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "02-2018"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "09-2019"
+            },
+            "n_msg": 1074
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "02-2018"
+            },
+            "n_msg": 175
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "01-2018"
+            },
+            "n_msg": 1040
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "04-2019"
+            },
+            "n_msg": 288
+        },
+        {
+            "_id": {
+                "author": "Marcel Leboeuf",
+                "date": "10-2014"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "10-2014"
+            },
+            "n_msg": 75
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "04-2017"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "03-2018"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "03-2018"
+            },
+            "n_msg": 48
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "02-2017"
+            },
+            "n_msg": 210
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "03-2018"
+            },
+            "n_msg": 77
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "02-2018"
+            },
+            "n_msg": 93
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "03-2018"
+            },
+            "n_msg": 874
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "03-2018"
+            },
+            "n_msg": 405
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "08-2017"
+            },
+            "n_msg": 259
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2015"
+            },
+            "n_msg": 464
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "01-2015"
+            },
+            "n_msg": 677
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "01-2015"
+            },
+            "n_msg": 294
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "04-2018"
+            },
+            "n_msg": 1044
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2018"
+            },
+            "n_msg": 410
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "08-2017"
+            },
+            "n_msg": 16
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "06-2017"
+            },
+            "n_msg": 142
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "09-2018"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "01-2018"
+            },
+            "n_msg": 242
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2016"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2017"
+            },
+            "n_msg": 7
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "03-2016"
+            },
+            "n_msg": 601
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "01-2015"
+            },
+            "n_msg": 882
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "06-2018"
+            },
+            "n_msg": 765
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2014"
+            },
+            "n_msg": 426
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "06-2018"
+            },
+            "n_msg": 223
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "02-2018"
+            },
+            "n_msg": 29
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2019"
+            },
+            "n_msg": 110
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "06-2018"
+            },
+            "n_msg": 286
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "07-2019"
+            },
+            "n_msg": 209
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "06-2018"
+            },
+            "n_msg": 964
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2015"
+            },
+            "n_msg": 23
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "01-2018"
+            },
+            "n_msg": 502
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "06-2018"
+            },
+            "n_msg": 15
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "08-2015"
+            },
+            "n_msg": 407
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2016"
+            },
+            "n_msg": 317
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "07-2018"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "10-2018"
+            },
+            "n_msg": 370
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "01-2019"
+            },
+            "n_msg": 308
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "07-2018"
+            },
+            "n_msg": 608
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "01-2016"
+            },
+            "n_msg": 523
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "07-2018"
+            },
+            "n_msg": 593
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "08-2018"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "09-2018"
+            },
+            "n_msg": 327
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "04-2019"
+            },
+            "n_msg": 923
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "09-2015"
+            },
+            "n_msg": 29
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "05-2016"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "09-2019"
+            },
+            "n_msg": 374
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "09-2018"
+            },
+            "n_msg": 109
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "01-2018"
+            },
+            "n_msg": 1005
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "02-2015"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "09-2018"
+            },
+            "n_msg": 222
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "06-2017"
+            },
+            "n_msg": 529
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "08-2019"
+            },
+            "n_msg": 588
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2017"
+            },
+            "n_msg": 1057
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2019"
+            },
+            "n_msg": 165
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2017"
+            },
+            "n_msg": 410
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "02-2015"
+            },
+            "n_msg": 270
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "09-2017"
+            },
+            "n_msg": 550
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2018"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2018"
+            },
+            "n_msg": 775
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2018"
+            },
+            "n_msg": 190
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2017"
+            },
+            "n_msg": 360
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "09-2019"
+            },
+            "n_msg": 398
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "11-2018"
+            },
+            "n_msg": 89
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2018"
+            },
+            "n_msg": 203
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2016"
+            },
+            "n_msg": 759
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "08-2018"
+            },
+            "n_msg": 526
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "05-2016"
+            },
+            "n_msg": 530
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2018"
+            },
+            "n_msg": 377
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "11-2018"
+            },
+            "n_msg": 390
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2018"
+            },
+            "n_msg": 698
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "01-2015"
+            },
+            "n_msg": 16
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2018"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2019"
+            },
+            "n_msg": 1593
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "01-2016"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "07-2018"
+            },
+            "n_msg": 104
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "09-2019"
+            },
+            "n_msg": 218
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2014"
+            },
+            "n_msg": 561
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "03-2019"
+            },
+            "n_msg": 484
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "11-2017"
+            },
+            "n_msg": 186
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "06-2015"
+            },
+            "n_msg": 207
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "09-2016"
+            },
+            "n_msg": 297
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "08-2019"
+            },
+            "n_msg": 262
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "06-2019"
+            },
+            "n_msg": 175
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "08-2019"
+            },
+            "n_msg": 203
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "08-2019"
+            },
+            "n_msg": 1533
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "07-2015"
+            },
+            "n_msg": 10
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "12-2019"
+            },
+            "n_msg": 41
+        },
+        {
+            "_id": {
+                "author": "Charles Pilon",
+                "date": "10-2019"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "07-2019"
+            },
+            "n_msg": 698
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "06-2016"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2017"
+            },
+            "n_msg": 1335
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "09-2015"
+            },
+            "n_msg": 579
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "03-2015"
+            },
+            "n_msg": 928
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "05-2018"
+            },
+            "n_msg": 107
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "09-2015"
+            },
+            "n_msg": 425
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "04-2018"
+            },
+            "n_msg": 511
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "04-2016"
+            },
+            "n_msg": 1867
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "07-2019"
+            },
+            "n_msg": 648
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "12-2019"
+            },
+            "n_msg": 38
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "12-2017"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "06-2019"
+            },
+            "n_msg": 239
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2018"
+            },
+            "n_msg": 289
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "03-2019"
+            },
+            "n_msg": 578
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "12-2019"
+            },
+            "n_msg": 120
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2019"
+            },
+            "n_msg": 70
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "05-2015"
+            },
+            "n_msg": 481
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "02-2019"
+            },
+            "n_msg": 458
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "01-2017"
+            },
+            "n_msg": 983
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2017"
+            },
+            "n_msg": 848
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "03-2019"
+            },
+            "n_msg": 15
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "01-2018"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "08-2018"
+            },
+            "n_msg": 222
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2017"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "08-2019"
+            },
+            "n_msg": 615
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "09-2015"
+            },
+            "n_msg": 258
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "02-2015"
+            },
+            "n_msg": 721
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "09-2019"
+            },
+            "n_msg": 24
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "05-2018"
+            },
+            "n_msg": 571
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "07-2019"
+            },
+            "n_msg": 250
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2019"
+            },
+            "n_msg": 241
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "06-2019"
+            },
+            "n_msg": 669
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "05-2018"
+            },
+            "n_msg": 316
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "05-2016"
+            },
+            "n_msg": 24
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "04-2019"
+            },
+            "n_msg": 1144
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2017"
+            },
+            "n_msg": 1262
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "01-2019"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2018"
+            },
+            "n_msg": 384
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "10-2018"
+            },
+            "n_msg": 103
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "07-2019"
+            },
+            "n_msg": 234
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "06-2016"
+            },
+            "n_msg": 254
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "07-2018"
+            },
+            "n_msg": 183
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "04-2016"
+            },
+            "n_msg": 694
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2016"
+            },
+            "n_msg": 510
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "08-2019"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2018"
+            },
+            "n_msg": 813
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "11-2019"
+            },
+            "n_msg": 184
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "08-2018"
+            },
+            "n_msg": 177
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2017"
+            },
+            "n_msg": 524
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "09-2019"
+            },
+            "n_msg": 1675
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "10-2019"
+            },
+            "n_msg": 901
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "03-2017"
+            },
+            "n_msg": 1177
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "07-2018"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "date": "11-2019"
+            },
+            "n_msg": 1006
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "08-2019"
+            },
+            "n_msg": 197
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "10-2018"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "08-2019"
+            },
+            "n_msg": 308
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "10-2019"
+            },
+            "n_msg": 309
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "05-2018"
+            },
+            "n_msg": 1045
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "02-2019"
+            },
+            "n_msg": 203
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2018"
+            },
+            "n_msg": 503
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "05-2015"
+            },
+            "n_msg": 319
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2019"
+            },
+            "n_msg": 505
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2017"
+            },
+            "n_msg": 900
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2019"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "01-2019"
+            },
+            "n_msg": 545
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "07-2017"
+            },
+            "n_msg": 361
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "12-2018"
+            },
+            "n_msg": 351
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "07-2016"
+            },
+            "n_msg": 170
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2018"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "05-2018"
+            },
+            "n_msg": 52
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "09-2019"
+            },
+            "n_msg": 927
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2019"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2015"
+            },
+            "n_msg": 474
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2019"
+            },
+            "n_msg": 528
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2019"
+            },
+            "n_msg": 782
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "03-2016"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "01-2019"
+            },
+            "n_msg": 117
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "01-2015"
+            },
+            "n_msg": 125
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "02-2016"
+            },
+            "n_msg": 11
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "09-2018"
+            },
+            "n_msg": 657
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "07-2019"
+            },
+            "n_msg": 285
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "12-2015"
+            },
+            "n_msg": 21
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2014"
+            },
+            "n_msg": 274
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "03-2018"
+            },
+            "n_msg": 224
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "05-2018"
+            },
+            "n_msg": 611
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "02-2018"
+            },
+            "n_msg": 460
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2017"
+            },
+            "n_msg": 336
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "03-2019"
+            },
+            "n_msg": 1650
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "08-2017"
+            },
+            "n_msg": 577
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "01-2017"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "08-2018"
+            },
+            "n_msg": 69
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "06-2019"
+            },
+            "n_msg": 97
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2016"
+            },
+            "n_msg": 798
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "08-2015"
+            },
+            "n_msg": 224
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "06-2019"
+            },
+            "n_msg": 498
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "04-2019"
+            },
+            "n_msg": 448
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "05-2019"
+            },
+            "n_msg": 912
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "10-2017"
+            },
+            "n_msg": 101
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2019"
+            },
+            "n_msg": 1744
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "09-2017"
+            },
+            "n_msg": 1310
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "02-2017"
+            },
+            "n_msg": 375
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "02-2019"
+            },
+            "n_msg": 1697
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "06-2019"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "06-2019"
+            },
+            "n_msg": 269
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "05-2019"
+            },
+            "n_msg": 503
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2015"
+            },
+            "n_msg": 504
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "03-2018"
+            },
+            "n_msg": 868
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "03-2017"
+            },
+            "n_msg": 1246
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "03-2015"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "05-2019"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "06-2018"
+            },
+            "n_msg": 99
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2015"
+            },
+            "n_msg": 14
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "05-2019"
+            },
+            "n_msg": 400
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "03-2019"
+            },
+            "n_msg": 1676
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "03-2016"
+            },
+            "n_msg": 1632
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "04-2019"
+            },
+            "n_msg": 121
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "09-2017"
+            },
+            "n_msg": 1115
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "06-2015"
+            },
+            "n_msg": 96
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "04-2019"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2014"
+            },
+            "n_msg": 1428
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "03-2019"
+            },
+            "n_msg": 200
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "03-2019"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "02-2019"
+            },
+            "n_msg": 284
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "04-2018"
+            },
+            "n_msg": 72
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "07-2017"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "10-2019"
+            },
+            "n_msg": 141
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2019"
+            },
+            "n_msg": 537
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "02-2019"
+            },
+            "n_msg": 469
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "07-2018"
+            },
+            "n_msg": 258
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "05-2015"
+            },
+            "n_msg": 16
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "12-2018"
+            },
+            "n_msg": 84
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "09-2017"
+            },
+            "n_msg": 59
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "07-2017"
+            },
+            "n_msg": 508
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "02-2015"
+            },
+            "n_msg": 98
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "09-2017"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "03-2015"
+            },
+            "n_msg": 29
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "02-2019"
+            },
+            "n_msg": 1117
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "08-2017"
+            },
+            "n_msg": 648
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "09-2016"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "08-2016"
+            },
+            "n_msg": 385
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "02-2015"
+            },
+            "n_msg": 56
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "08-2017"
+            },
+            "n_msg": 194
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "01-2016"
+            },
+            "n_msg": 30
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "04-2018"
+            },
+            "n_msg": 774
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "08-2017"
+            },
+            "n_msg": 9
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "07-2017"
+            },
+            "n_msg": 195
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "12-2017"
+            },
+            "n_msg": 129
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "05-2017"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "07-2019"
+            },
+            "n_msg": 988
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "04-2018"
+            },
+            "n_msg": 70
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "11-2015"
+            },
+            "n_msg": 264
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "07-2017"
+            },
+            "n_msg": 87
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "06-2017"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "06-2017"
+            },
+            "n_msg": 80
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "06-2017"
+            },
+            "n_msg": 358
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "06-2017"
+            },
+            "n_msg": 11
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "07-2018"
+            },
+            "n_msg": 155
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "03-2016"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "05-2018"
+            },
+            "n_msg": 7
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "05-2017"
+            },
+            "n_msg": 296
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "04-2016"
+            },
+            "n_msg": 404
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "05-2017"
+            },
+            "n_msg": 13
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "07-2015"
+            },
+            "n_msg": 154
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "05-2017"
+            },
+            "n_msg": 82
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "09-2017"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "05-2017"
+            },
+            "n_msg": 31
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "02-2018"
+            },
+            "n_msg": 613
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "05-2017"
+            },
+            "n_msg": 51
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "03-2016"
+            },
+            "n_msg": 1453
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "02-2016"
+            },
+            "n_msg": 875
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2018"
+            },
+            "n_msg": 1490
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "04-2017"
+            },
+            "n_msg": 1024
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2017"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "03-2019"
+            },
+            "n_msg": 234
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "02-2017"
+            },
+            "n_msg": 993
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2019"
+            },
+            "n_msg": 854
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "03-2017"
+            },
+            "n_msg": 311
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "03-2017"
+            },
+            "n_msg": 511
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "01-2017"
+            },
+            "n_msg": 371
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "04-2019"
+            },
+            "n_msg": 475
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "02-2015"
+            },
+            "n_msg": 317
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "09-2018"
+            },
+            "n_msg": 108
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "03-2017"
+            },
+            "n_msg": 9
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "04-2015"
+            },
+            "n_msg": 951
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "03-2017"
+            },
+            "n_msg": 16
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2016"
+            },
+            "n_msg": 268
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "02-2017"
+            },
+            "n_msg": 1120
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "01-2017"
+            },
+            "n_msg": 1046
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "01-2017"
+            },
+            "n_msg": 237
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "01-2017"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "10-2015"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2016"
+            },
+            "n_msg": 284
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2016"
+            },
+            "n_msg": 697
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "02-2016"
+            },
+            "n_msg": 758
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "10-2016"
+            },
+            "n_msg": 29
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "12-2016"
+            },
+            "n_msg": 19
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "05-2019"
+            },
+            "n_msg": 220
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2016"
+            },
+            "n_msg": 2
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "12-2015"
+            },
+            "n_msg": 273
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "04-2018"
+            },
+            "n_msg": 234
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2016"
+            },
+            "n_msg": 911
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "05-2019"
+            },
+            "n_msg": 1261
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "11-2016"
+            },
+            "n_msg": 24
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "06-2015"
+            },
+            "n_msg": 140
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "04-2017"
+            },
+            "n_msg": 252
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "02-2017"
+            },
+            "n_msg": 11
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "09-2016"
+            },
+            "n_msg": 298
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2016"
+            },
+            "n_msg": 983
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "05-2019"
+            },
+            "n_msg": 232
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "10-2016"
+            },
+            "n_msg": 1052
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2016"
+            },
+            "n_msg": 547
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "10-2016"
+            },
+            "n_msg": 7
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "08-2016"
+            },
+            "n_msg": 205
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2015"
+            },
+            "n_msg": 201
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "09-2016"
+            },
+            "n_msg": 939
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "09-2016"
+            },
+            "n_msg": 15
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "08-2016"
+            },
+            "n_msg": 198
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "08-2015"
+            },
+            "n_msg": 368
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "01-2019"
+            },
+            "n_msg": 1738
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "08-2016"
+            },
+            "n_msg": 401
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "08-2016"
+            },
+            "n_msg": 10
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "07-2016"
+            },
+            "n_msg": 189
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "07-2016"
+            },
+            "n_msg": 344
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "07-2016"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "08-2018"
+            },
+            "n_msg": 511
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "06-2016"
+            },
+            "n_msg": 618
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2018"
+            },
+            "n_msg": 466
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "06-2016"
+            },
+            "n_msg": 530
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "01-2019"
+            },
+            "n_msg": 326
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "07-2015"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "06-2016"
+            },
+            "n_msg": 226
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "06-2016"
+            },
+            "n_msg": 52
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "05-2016"
+            },
+            "n_msg": 605
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "05-2016"
+            },
+            "n_msg": 1271
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "date": "12-2017"
+            },
+            "n_msg": 127
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "04-2015"
+            },
+            "n_msg": 378
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "05-2016"
+            },
+            "n_msg": 485
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2019"
+            },
+            "n_msg": 450
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "11-2016"
+            },
+            "n_msg": 261
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "04-2016"
+            },
+            "n_msg": 1180
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "04-2015"
+            },
+            "n_msg": 417
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "03-2015"
+            },
+            "n_msg": 256
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "04-2016"
+            },
+            "n_msg": 21
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "04-2016"
+            },
+            "n_msg": 27
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "09-2017"
+            },
+            "n_msg": 295
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "03-2016"
+            },
+            "n_msg": 474
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "05-2015"
+            },
+            "n_msg": 73
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "02-2016"
+            },
+            "n_msg": 313
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "02-2016"
+            },
+            "n_msg": 354
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "02-2016"
+            },
+            "n_msg": 24
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "01-2016"
+            },
+            "n_msg": 772
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "03-2016"
+            },
+            "n_msg": 74
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2014"
+            },
+            "n_msg": 1888
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "01-2016"
+            },
+            "n_msg": 297
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "01-2016"
+            },
+            "n_msg": 299
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2015"
+            },
+            "n_msg": 900
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "04-2017"
+            },
+            "n_msg": 858
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "12-2015"
+            },
+            "n_msg": 529
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "11-2015"
+            },
+            "n_msg": 543
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "11-2015"
+            },
+            "n_msg": 11
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "10-2015"
+            },
+            "n_msg": 950
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "11-2015"
+            },
+            "n_msg": 18
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "10-2015"
+            },
+            "n_msg": 550
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "10-2015"
+            },
+            "n_msg": 381
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "09-2015"
+            },
+            "n_msg": 234
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "02-2018"
+            },
+            "n_msg": 764
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "09-2015"
+            },
+            "n_msg": 23
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "08-2015"
+            },
+            "n_msg": 13
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "08-2015"
+            },
+            "n_msg": 14
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "07-2015"
+            },
+            "n_msg": 142
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "07-2015"
+            },
+            "n_msg": 235
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "07-2015"
+            },
+            "n_msg": 141
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "03-2015"
+            },
+            "n_msg": 18
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "07-2015"
+            },
+            "n_msg": 12
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "12-2014"
+            },
+            "n_msg": 153
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "06-2015"
+            },
+            "n_msg": 211
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "06-2018"
+            },
+            "n_msg": 126
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "09-2019"
+            },
+            "n_msg": 224
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "date": "11-2019"
+            },
+            "n_msg": 242
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "06-2015"
+            },
+            "n_msg": 14
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "06-2015"
+            },
+            "n_msg": 7
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "05-2015"
+            },
+            "n_msg": 218
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "05-2015"
+            },
+            "n_msg": 334
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "date": "12-2014"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "date": "04-2015"
+            },
+            "n_msg": 311
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "07-2017"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "date": "04-2015"
+            },
+            "n_msg": 26
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "04-2015"
+            },
+            "n_msg": 27
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "03-2015"
+            },
+            "n_msg": 265
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "03-2015"
+            },
+            "n_msg": 436
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "11-2014"
+            },
+            "n_msg": 1688
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "09-2018"
+            },
+            "n_msg": 337
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "07-2016"
+            },
+            "n_msg": 359
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "02-2015"
+            },
+            "n_msg": 650
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "01-2015"
+            },
+            "n_msg": 431
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "date": "12-2014"
+            },
+            "n_msg": 1180
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "date": "12-2014"
+            },
+            "n_msg": 681
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "date": "08-2015"
+            },
+            "n_msg": 254
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "date": "12-2014"
+            },
+            "n_msg": 39
+        }
+    ],
+    "n_msg_by_weekday": [
+        {
+            "_id": {
+                "author": "Marcel Leboeuf",
+                "weekday": "5"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "weekday": "4"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "weekday": "2"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "weekday": "5"
+            },
+            "n_msg": 5
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "weekday": "6"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "weekday": "3"
+            },
+            "n_msg": 4
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "2"
+            },
+            "n_msg": 158
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "3"
+            },
+            "n_msg": 125
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "4"
+            },
+            "n_msg": 104
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "5"
+            },
+            "n_msg": 124
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "3"
+            },
+            "n_msg": 284
+        },
+        {
+            "_id": {
+                "author": "Charles Pilon",
+                "weekday": "1"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "7"
+            },
+            "n_msg": 178
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "1"
+            },
+            "n_msg": 295
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "6"
+            },
+            "n_msg": 253
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "2"
+            },
+            "n_msg": 384
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "2"
+            },
+            "n_msg": 662
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "2"
+            },
+            "n_msg": 87
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "6"
+            },
+            "n_msg": 8313
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "3"
+            },
+            "n_msg": 3495
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "1"
+            },
+            "n_msg": 2348
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "4"
+            },
+            "n_msg": 415
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "6"
+            },
+            "n_msg": 3453
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "4"
+            },
+            "n_msg": 9157
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "7"
+            },
+            "n_msg": 142
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "6"
+            },
+            "n_msg": 8318
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "5"
+            },
+            "n_msg": 9690
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "6"
+            },
+            "n_msg": 569
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "7"
+            },
+            "n_msg": 5405
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "7"
+            },
+            "n_msg": 523
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "3"
+            },
+            "n_msg": 7921
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "3"
+            },
+            "n_msg": 739
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "4"
+            },
+            "n_msg": 611
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "2"
+            },
+            "n_msg": 6921
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "6"
+            },
+            "n_msg": 3509
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "1"
+            },
+            "n_msg": 93
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "3"
+            },
+            "n_msg": 633
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "4"
+            },
+            "n_msg": 3304
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "5"
+            },
+            "n_msg": 8466
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "6"
+            },
+            "n_msg": 817
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "7"
+            },
+            "n_msg": 613
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "weekday": "6"
+            },
+            "n_msg": 136
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "5"
+            },
+            "n_msg": 267
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "5"
+            },
+            "n_msg": 3386
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "3"
+            },
+            "n_msg": 3248
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "1"
+            },
+            "n_msg": 361
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "4"
+            },
+            "n_msg": 859
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "4"
+            },
+            "n_msg": 3527
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "4"
+            },
+            "n_msg": 173
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "2"
+            },
+            "n_msg": 548
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "4"
+            },
+            "n_msg": 8139
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "1"
+            },
+            "n_msg": 1827
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "6"
+            },
+            "n_msg": 835
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "weekday": "5"
+            },
+            "n_msg": 471
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "weekday": "5"
+            },
+            "n_msg": 923
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "2"
+            },
+            "n_msg": 2656
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "3"
+            },
+            "n_msg": 8801
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "3"
+            },
+            "n_msg": 866
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "weekday": "1"
+            },
+            "n_msg": 155
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "1"
+            },
+            "n_msg": 469
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "2"
+            },
+            "n_msg": 8235
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "1"
+            },
+            "n_msg": 5239
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "2"
+            },
+            "n_msg": 2778
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "7"
+            },
+            "n_msg": 2264
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "weekday": "1"
+            },
+            "n_msg": 5531
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "weekday": "5"
+            },
+            "n_msg": 3494
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "weekday": "7"
+            },
+            "n_msg": 6168
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "7"
+            },
+            "n_msg": 471
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "weekday": "7"
+            },
+            "n_msg": 2611
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "weekday": "5"
+            },
+            "n_msg": 704
+        }
+    ],
+    "n_msg_by_year": [
+        {
+            "_id": {
+                "author": "Marcel Leboeuf",
+                "year": "2014"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "year": "2014"
+            },
+            "n_msg": 8
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "year": "2017"
+            },
+            "n_msg": 473
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2016"
+            },
+            "n_msg": 204
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2017"
+            },
+            "n_msg": 9981
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2018"
+            },
+            "n_msg": 32
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2017"
+            },
+            "n_msg": 2831
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2016"
+            },
+            "n_msg": 9387
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2018"
+            },
+            "n_msg": 7961
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2019"
+            },
+            "n_msg": 4568
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2015"
+            },
+            "n_msg": 295
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2014"
+            },
+            "n_msg": 198
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "year": "2018"
+            },
+            "n_msg": 1939
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2015"
+            },
+            "n_msg": 3787
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2014"
+            },
+            "n_msg": 1605
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2018"
+            },
+            "n_msg": 3270
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2017"
+            },
+            "n_msg": 61
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "year": "2019"
+            },
+            "n_msg": 4364
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2019"
+            },
+            "n_msg": 4644
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "year": "2019"
+            },
+            "n_msg": 2780
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2016"
+            },
+            "n_msg": 4063
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "year": "2018"
+            },
+            "n_msg": 1085
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2018"
+            },
+            "n_msg": 42
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "year": "2018"
+            },
+            "n_msg": 4254
+        },
+        {
+            "_id": {
+                "author": "Charles Pilon",
+                "year": "2019"
+            },
+            "n_msg": 1
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2017"
+            },
+            "n_msg": 80
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "year": "2019"
+            },
+            "n_msg": 1998
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2019"
+            },
+            "n_msg": 6
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2014"
+            },
+            "n_msg": 3486
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2014"
+            },
+            "n_msg": 687
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2017"
+            },
+            "n_msg": 4145
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "year": "2017"
+            },
+            "n_msg": 129
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2016"
+            },
+            "n_msg": 4412
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2019"
+            },
+            "n_msg": 70
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2016"
+            },
+            "n_msg": 11193
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "year": "2016"
+            },
+            "n_msg": 200
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "year": "2016"
+            },
+            "n_msg": 3
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2014"
+            },
+            "n_msg": 1335
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2015"
+            },
+            "n_msg": 5338
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "year": "2015"
+            },
+            "n_msg": 2986
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2019"
+            },
+            "n_msg": 14462
+        },
+        {
+            "_id": {
+                "author": "Kaven Nguyen",
+                "year": "2015"
+            },
+            "n_msg": 9
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2019"
+            },
+            "n_msg": 11679
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2015"
+            },
+            "n_msg": 7533
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "year": "2015"
+            },
+            "n_msg": 404
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "year": "2017"
+            },
+            "n_msg": 10538
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2018"
+            },
+            "n_msg": 10250
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "year": "2014"
+            },
+            "n_msg": 4496
+        }
+    ],
+    "n_word": {
+        "Charles Pilon": 3,
+        "Dj\u00e9zeune": 335259,
+        "Godbout": 4199,
+        "Jirome": 24144,
+        "Kaven": 62,
+        "Krostif": 44099,
+        "Lakasse": 107749,
+        "Marcel Leboeuf": 6,
+        "M\u00e9ganie": 31963,
+        "Pierre-Poom": 162969,
+        "Roulo": 298167,
+        "Vinssan": 5543
+    },
+    "ratio_char_msg": {
+        "Charles Pilon": 25.0,
+        "Dj\u00e9zeune": 31.818236233040704,
+        "Godbout": 25.79778051787916,
+        "Jirome": 33.89904386951631,
+        "Kaven": 16.2,
+        "Krostif": 48.76835808580858,
+        "Lakasse": 26.20019826283988,
+        "Marcel Leboeuf": 34.0,
+        "M\u00e9ganie": 38.26879010082493,
+        "Pierre-Poom": 40.530025101370924,
+        "Roulo": 30.187348549988275,
+        "Vinssan": 17.47956403269755
+    },
+    "ratio_word_msg": {
+        "Charles Pilon": 3.0,
+        "Dj\u00e9zeune": 6.081023724878474,
+        "Godbout": 5.177558569667077,
+        "Jirome": 6.789651293588301,
+        "Kaven": 3.1,
+        "Krostif": 9.096328382838283,
+        "Lakasse": 5.086338746223565,
+        "Marcel Leboeuf": 6.0,
+        "M\u00e9ganie": 7.324243813015582,
+        "Pierre-Poom": 7.866817918517088,
+        "Roulo": 5.8267607285234115,
+        "Vinssan": 3.775885558583106
+    },
+    "react_made_by_actor": [
+        {
+            "_id": "Pierre-Olivier Marotte",
+            "count": 2163
+        },
+        {
+            "_id": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+            "count": 1409
+        },
+        {
+            "_id": "Meggie Lacasse",
+            "count": 372
+        },
+        {
+            "_id": "\u00c9tienne Rouleau",
+            "count": 341
+        },
+        {
+            "_id": "J\u00e9r\u00f4me Sirois Charron",
+            "count": 182
+        },
+        {
+            "_id": "William Lacasse",
+            "count": 131
+        },
+        {
+            "_id": "Christophe Landry-bergeron",
+            "count": 125
+        },
+        {
+            "_id": "\u00c9tienne Godbout",
+            "count": 22
+        },
+        {
+            "_id": "Vincent Masson-Boutin",
+            "count": 14
+        }
+    ],
+    "react_made_by_actor_and_reaction": [
+        {
+            "_id": {
+                "actor": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 3
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 8
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 4
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 13
+        },
+        {
+            "_id": {
+                "actor": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 71
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 24
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 4
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 38
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 550
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 171
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 9
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 270
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 52
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 24
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 3
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 426
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 92
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 105
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 35
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 117
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 87
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 10
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 475
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 10
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 95
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 18
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 33
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 472
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 18
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 14
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 28
+        },
+        {
+            "_id": {
+                "actor": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 10
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 20
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 761
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 63
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 26
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 13
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 52
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 74
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 24
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 4
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 32
+        },
+        {
+            "_id": {
+                "actor": "Meggie Lacasse",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 3
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 65
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 3
+        },
+        {
+            "_id": {
+                "actor": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 20
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 168
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 31
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 20
+        },
+        {
+            "_id": {
+                "actor": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 12
+        },
+        {
+            "_id": {
+                "actor": "William Lacasse",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 30
+        },
+        {
+            "_id": {
+                "actor": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 6
+        },
+        {
+            "_id": {
+                "actor": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 34
+        }
+    ],
+    "react_made_by_reaction": [
+        {
+            "_id": "\ud83d\ude0d",
+            "count": 1531
+        },
+        {
+            "_id": "\ud83d\ude22",
+            "count": 1136
+        },
+        {
+            "_id": "\ud83d\ude2e",
+            "count": 816
+        },
+        {
+            "_id": "\ud83d\ude20",
+            "count": 565
+        },
+        {
+            "_id": "\ud83d\udc4d",
+            "count": 375
+        },
+        {
+            "_id": "\ud83d\ude06",
+            "count": 269
+        },
+        {
+            "_id": "\ud83d\udc4e",
+            "count": 67
+        }
+    ],
+    "react_received_by_author": [
+        {
+            "_id": "Marcel Leboeuf",
+            "count": 0
+        },
+        {
+            "_id": "Kaven Nguyen",
+            "count": 0
+        },
+        {
+            "_id": "Christophe Landry-bergeron",
+            "count": 411
+        },
+        {
+            "_id": "Meggie Lacasse",
+            "count": 224
+        },
+        {
+            "_id": "\u00c9tienne Rouleau",
+            "count": 1492
+        },
+        {
+            "_id": "Charles Pilon",
+            "count": 0
+        },
+        {
+            "_id": "William Lacasse",
+            "count": 639
+        },
+        {
+            "_id": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+            "count": 1208
+        },
+        {
+            "_id": "Pierre-Olivier Marotte",
+            "count": 443
+        },
+        {
+            "_id": "\u00c9tienne Godbout",
+            "count": 5
+        },
+        {
+            "_id": "J\u00e9r\u00f4me Sirois Charron",
+            "count": 328
+        },
+        {
+            "_id": "Vincent Masson-Boutin",
+            "count": 9
+        }
+    ],
+    "react_received_by_author_and_type": [
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 3
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 11
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 13
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 142
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 43
+        },
+        {
+            "_id": {
+                "author": "Vincent Masson-Boutin",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 6
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 196
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 159
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 198
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 379
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 121
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 30
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 23
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 79
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 97
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 47
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 83
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 429
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 89
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 103
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 81
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 116
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 32
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 275
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 24
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 433
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 12
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 39
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 273
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 85
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 26
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 49
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 60
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude0d"
+            },
+            "count": 109
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 38
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Godbout",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 1
+        },
+        {
+            "_id": {
+                "author": "William Lacasse",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 38
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 113
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 43
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 2
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 69
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 16
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00e9my Talbot-P\u00e2quet",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 125
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\ude20"
+            },
+            "count": 196
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\ude22"
+            },
+            "count": 99
+        },
+        {
+            "_id": {
+                "author": "\u00c9tienne Rouleau",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 29
+        },
+        {
+            "_id": {
+                "author": "Meggie Lacasse",
+                "reaction": "\ud83d\udc4d"
+            },
+            "count": 20
+        },
+        {
+            "_id": {
+                "author": "J\u00e9r\u00f4me Sirois Charron",
+                "reaction": "\ud83d\ude2e"
+            },
+            "count": 68
+        },
+        {
+            "_id": {
+                "author": "Pierre-Olivier Marotte",
+                "reaction": "\ud83d\ude06"
+            },
+            "count": 21
+        },
+        {
+            "_id": {
+                "author": "Christophe Landry-bergeron",
+                "reaction": "\ud83d\udc4e"
+            },
+            "count": 8
+        }
+    ],
+    "total_msg": 163273,
+    "total_msg_by_month": [
+        {
+            "_id": "12-2014",
+            "n_msg": 3246
+        },
+        {
+            "_id": "02-2015",
+            "n_msg": 2113
+        },
+        {
+            "_id": "03-2015",
+            "n_msg": 1937
+        },
+        {
+            "_id": "04-2015",
+            "n_msg": 2110
+        },
+        {
+            "_id": "05-2015",
+            "n_msg": 1441
+        },
+        {
+            "_id": "10-2014",
+            "n_msg": 3487
+        },
+        {
+            "_id": "07-2015",
+            "n_msg": 697
+        },
+        {
+            "_id": "08-2015",
+            "n_msg": 1280
+        },
+        {
+            "_id": "10-2015",
+            "n_msg": 2384
+        },
+        {
+            "_id": "11-2015",
+            "n_msg": 1501
+        },
+        {
+            "_id": "12-2015",
+            "n_msg": 2241
+        },
+        {
+            "_id": "08-2017",
+            "n_msg": 1703
+        },
+        {
+            "_id": "06-2017",
+            "n_msg": 1121
+        },
+        {
+            "_id": "07-2018",
+            "n_msg": 1906
+        },
+        {
+            "_id": "02-2018",
+            "n_msg": 2136
+        },
+        {
+            "_id": "09-2018",
+            "n_msg": 1761
+        },
+        {
+            "_id": "02-2016",
+            "n_msg": 2335
+        },
+        {
+            "_id": "10-2018",
+            "n_msg": 2141
+        },
+        {
+            "_id": "08-2018",
+            "n_msg": 1593
+        },
+        {
+            "_id": "11-2018",
+            "n_msg": 2229
+        },
+        {
+            "_id": "01-2019",
+            "n_msg": 4104
+        },
+        {
+            "_id": "06-2016",
+            "n_msg": 1685
+        },
+        {
+            "_id": "02-2019",
+            "n_msg": 4228
+        },
+        {
+            "_id": "09-2015",
+            "n_msg": 1548
+        },
+        {
+            "_id": "09-2019",
+            "n_msg": 4914
+        },
+        {
+            "_id": "03-2018",
+            "n_msg": 2504
+        },
+        {
+            "_id": "03-2019",
+            "n_msg": 4843
+        },
+        {
+            "_id": "11-2019",
+            "n_msg": 5004
+        },
+        {
+            "_id": "08-2019",
+            "n_msg": 3714
+        },
+        {
+            "_id": "01-2016",
+            "n_msg": 1927
+        },
+        {
+            "_id": "01-2018",
+            "n_msg": 3035
+        },
+        {
+            "_id": "12-2018",
+            "n_msg": 3633
+        },
+        {
+            "_id": "06-2018",
+            "n_msg": 2478
+        },
+        {
+            "_id": "12-2017",
+            "n_msg": 2760
+        },
+        {
+            "_id": "07-2019",
+            "n_msg": 3312
+        },
+        {
+            "_id": "06-2019",
+            "n_msg": 1950
+        },
+        {
+            "_id": "01-2015",
+            "n_msg": 2425
+        },
+        {
+            "_id": "07-2017",
+            "n_msg": 1159
+        },
+        {
+            "_id": "11-2016",
+            "n_msg": 2313
+        },
+        {
+            "_id": "06-2015",
+            "n_msg": 675
+        },
+        {
+            "_id": "05-2017",
+            "n_msg": 479
+        },
+        {
+            "_id": "04-2018",
+            "n_msg": 2708
+        },
+        {
+            "_id": "05-2018",
+            "n_msg": 2709
+        },
+        {
+            "_id": "05-2019",
+            "n_msg": 3531
+        },
+        {
+            "_id": "04-2019",
+            "n_msg": 3402
+        },
+        {
+            "_id": "04-2017",
+            "n_msg": 2535
+        },
+        {
+            "_id": "10-2019",
+            "n_msg": 4784
+        },
+        {
+            "_id": "11-2017",
+            "n_msg": 3676
+        },
+        {
+            "_id": "12-2019",
+            "n_msg": 786
+        },
+        {
+            "_id": "10-2017",
+            "n_msg": 2847
+        },
+        {
+            "_id": "07-2016",
+            "n_msg": 1067
+        },
+        {
+            "_id": "02-2017",
+            "n_msg": 2709
+        },
+        {
+            "_id": "09-2017",
+            "n_msg": 3331
+        },
+        {
+            "_id": "03-2017",
+            "n_msg": 3270
+        },
+        {
+            "_id": "03-2016",
+            "n_msg": 4243
+        },
+        {
+            "_id": "01-2017",
+            "n_msg": 2648
+        },
+        {
+            "_id": "12-2016",
+            "n_msg": 2029
+        },
+        {
+            "_id": "10-2016",
+            "n_msg": 3128
+        },
+        {
+            "_id": "11-2014",
+            "n_msg": 5083
+        },
+        {
+            "_id": "09-2016",
+            "n_msg": 2423
+        },
+        {
+            "_id": "08-2016",
+            "n_msg": 1199
+        },
+        {
+            "_id": "05-2016",
+            "n_msg": 2920
+        },
+        {
+            "_id": "04-2016",
+            "n_msg": 4193
+        }
+    ],
+    "total_msg_by_year": [
+        {
+            "_id": "2015",
+            "n_msg": 20352
+        },
+        {
+            "_id": "2016",
+            "n_msg": 29462
+        },
+        {
+            "_id": "2019",
+            "n_msg": 44572
+        },
+        {
+            "_id": "2018",
+            "n_msg": 28833
+        },
+        {
+            "_id": "2014",
+            "n_msg": 11816
+        },
+        {
+            "_id": "2017",
+            "n_msg": 28238
+        }
+    ]
+}

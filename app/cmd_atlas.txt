@@ -1,0 +1,3 @@
+C:\Program Files\MongoDB\Server\4.2\bin
+
+mongoimport --host ToukaAnalytics-shard-0/toukaanalytics-shard-00-00-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-01-epm7v.gcp.mongodb.net:27017,toukaanalytics-shard-00-02-epm7v.gcp.mongodb.net:27017 --ssl --username jtpaquet --password pv9E9SB5gAVzKWbW --authenticationDatabase admin --db ToukaAnalytics --collection messages_10dec19 --type json --file "C:\Users\jtalbotpaquet\Documents\MongoDB\app\messages.json" --jsonArray
