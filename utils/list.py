@@ -1,21 +1,23 @@
 import json
 import codecs
 from datetime import datetime
-from mongoengine import connect, Document
+import os
 
 msg_att= []
 authors = []
 
-data = json.load(codecs.open('touka.json', 'r', 'utf-8'))  # Pour avoir les caractères spéciaux
+filename = os.path.join("touka_7mai", "messages_all.json")
 
-for message in data['messages']:
+data = json.load(codecs.open(filename, 'r', 'utf-8'))  # Pour avoir les caractères spéciaux
+
+for message in data:
     for att in message.keys():
         if att not in msg_att:
             msg_att.append(att)
     
-    if message['sender_name'] not in authors:
-        authors.append(message['sender_name'])
+    if message['author'] not in authors:
+        authors.append(message['author'])
 
 print(msg_att)
 print(authors)
-print(len(data['messages']))
+# print(len(data['messages']))

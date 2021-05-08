@@ -3,8 +3,8 @@ import json
 import codecs
 
 
-src_filename = os.path.join("utils","touka_23avril2020.json")
-dst_filename = os.path.join("messages.json")
+src_filename = os.path.join("touka_7mai", "touka_7mai2021.json")
+dst_filename = os.path.join("touka_7mai", "messages_all.json")
 
 with open(src_filename, 'r') as src_file:
     with open(dst_filename, 'w', encoding='utf-8') as dst_file:

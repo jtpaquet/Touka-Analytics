@@ -2,7 +2,7 @@ import os
 import json
 import codecs
 
-files = [os.path.join("utils", "touka_23avril", "message_{}.json".format(i+1)) for i in range(19)]
+files = [os.path.join("touka_7mai", f"message_{i+1}.json") for i in range(23)]
 all_data = []
 
 for file in files:
@@ -13,6 +13,6 @@ for file in files:
 all_data = [item for sublist in all_data for item in sublist]
 
 
-with open(os.path.join("utils", "touka_23avril2020.json"), "w") as json_file:
+with open(os.path.join("touka_7mai", "touka_7mai2021.json"), "w") as json_file:
     json.dump(all_data, json_file, indent=4, sort_keys=True)
 
