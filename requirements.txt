@@ -63,7 +63,7 @@ stockfish==3.13.0
 sympy==1.7.1
 tiingo==0.13.0
 toml==0.10.1
-urllib3==1.26.3
+urllib3==1.26.4
 websocket==0.2.1
 Werkzeug==1.0.1
 wrapt==1.12.1
