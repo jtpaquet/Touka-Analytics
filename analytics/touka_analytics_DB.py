@@ -31,7 +31,7 @@ for member in members.find({}):
 
     # data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'msg_timestamps' : member_timestamps, 'date_msg' : member_dates, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
     data.append( {'Name': member['pseudo'], 'txt_msg': member_messages, 'msg_timestamps' : member_timestamps, 'Type': member_types, 'Reaction' : member_reacts, 'msg_count' : n_msg} )
-
+    print(f"{member} done")
 
 df = pd.DataFrame(data, columns=('Name', 'txt_msg', 'msg_timestamps', 'date_msg', 'Type', 'Reaction', 'msg_count'))
 df = df.set_index('Name')

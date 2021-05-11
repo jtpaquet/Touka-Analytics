@@ -6,7 +6,7 @@ client = MongoClient("localhost", 27017)
 db = client['ToukaAnalytics']
 
 members = db['members']
-messages = db['messages']
+messages = db['messages_7mai2021']
 
 # recherche = input("Entrez le mot à rechercher: ")
 recherche = 'ftcdg'

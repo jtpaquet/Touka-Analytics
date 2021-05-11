@@ -17,7 +17,7 @@ t0 = datetime.now()
 connection = MongoClient(MONGODB_URI)
 database = connection[DBS_NAME]
 members = database['members']
-messages = database['messages']
+messages = database['messages_7mai2021']
 print('connexion time:', datetime.now()-t0)
 pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
 connection.close()
@@ -56,8 +56,8 @@ data['n_msg_by_year'] = list(messages.aggregate(msg_by_author_by_year_pipeline))
 data['total_msg_by_month'] = list(messages.aggregate(msg_by_month_pipeline))
 data['total_msg_by_year'] = list(messages.aggregate(msg_by_year_pipeline))
 # Reactions
-react_received_by_author_pipeline = [{ "$group": {"_id": "$author", "count": {"$sum":  {"$size": "$reactions"}}} }]
-data['react_received_by_author'] = list(messages.aggregate(react_received_by_author_pipeline))
+# react_received_by_author_pipeline = [{ "$group": {"_id": "$author", "count": {"$sum":  {"$size": "$reactions"}}} }]
+# data['react_received_by_author'] = list(messages.aggregate(react_received_by_author_pipeline))
 react_received_by_author_and_type_pipeline = [{"$unwind": "$reactions"}, {"$group": {"_id": {"author":"$author", "reaction": "$reactions.reaction" }, "count": {"$sum":1}}}]
 data['react_received_by_author_and_type'] = list(messages.aggregate(react_received_by_author_and_type_pipeline))
 react_made_by_actor_pipeline = [{"$unwind": "$reactions"}, {"$sortByCount": "$reactions.actor"}]
