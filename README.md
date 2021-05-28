@@ -10,12 +10,13 @@ Table of Contents
 5. [Archives](#archives)
 6. [Chatbot](#chatbot)
 7. [Database](#database)
-8. [Figures](#figure)
-9. [LocalDB](#localDB)
-10. [Text to speech](#text-to-speech)
-11. [Utils](#utils)
-12. [Venv](#venv)
-13. [Changelog](#changelog)
+8. [Docs](#docs)
+9. [Figures](#figure)
+10. [LocalDB](#localDB)
+11. [Text to speech](#text-to-speech)
+12. [Utils](#utils)
+13. [Venv](#venv)
+14. [Changelog](#changelog)
 
 Introduction
 -------------
@@ -39,7 +40,8 @@ Analytics
 App
 ---
 
-bruh
+``app_debug.py`` - génère le .djezeune.
+
 
 
 Archives
@@ -62,6 +64,11 @@ Database
 -------------
 
 bruh
+
+Docs
+-------------
+
+``dash_app.py`` - Site pour github pages.
 
 
 Figures
