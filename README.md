@@ -39,7 +39,8 @@ Analytics
 App
 ---
 
-bruh
+``app_debug.py`` - génère le .djezeune.
+
 
 
 Archives
