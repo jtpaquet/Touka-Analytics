@@ -23,12 +23,17 @@ data_.pop('Kaven', None)
 data_.pop('Marcel Leboeuf', None)
 data_.pop('Pat Laf', None)
 
+msg_total = data["total_msg"]
+
 plt.bar(range(len(data_)), list(data_.values()), align='center')
 plt.xticks(range(len(data_)), list(data_.keys()), rotation=30)
+plt.text(6, 60e3, f"Total: {msg_total}", size="xx-large")
+for i in range(len(list(data_.values()))):
+    plt.text(i-0.4, 1e3+list(data_.values())[i], str(list(data_.values())[i]))
 plt.title("Nombre de messages par personne")
 plt.tight_layout()
 plt.savefig("stats\\stats_7mai2021\\n_msg.png")
-# plt.show()
+plt.show()
 plt.clf()
 
 
@@ -113,7 +118,7 @@ plt.xticks(range(len(data_)), year)
 plt.title("Message par année")
 plt.tight_layout()
 plt.savefig("stats\\stats_7mai2021\\msg_per_year.png")
-# plt.show()
+plt.show()
 plt.clf()
 
 # print(data)
