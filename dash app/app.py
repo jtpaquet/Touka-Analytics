@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 from pymongo import MongoClient
 from datetime import datetime
-from random import randint
+from random import randint, choice
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -34,11 +34,11 @@ pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
 connection.close()
 
 noms_tabs = ["Waaaaaan", "C'est l'homme comique", "Jean-Thomas Jobin approved", "Let's gooooo", "Balaladollars to the moon", "Victory royale", "Sauna", "balala", "oh nionn", "bibidi", "Mr Touka Poom sait si tu as été méchant"]
-i_tab = randint(0, len(noms_tabs))
+i_tab = int(str(t0.microsecond)[-1])
 
 app = dash.Dash(__name__)
 server = app.server
-app.title = f'Touka Analytics - {noms_tabs[i_tab]}'
+app.title = f'Touka Analytics - {choice(noms_tabs)}'
 
 # Query data 
 
@@ -47,7 +47,7 @@ app.title = f'Touka Analytics - {noms_tabs[i_tab]}'
 t0 = datetime.now()
 data = {}
 data['n_msg'] = {pseudos[d['_id']] : d['count'] for d in list(messages.aggregate([{"$sortByCount": "$author"}]))}
-n_word_pipeline = [{"$match": {"content": {"$exists":True}}}, {"$project": {"author": 1, "n_word": {"$size": {"$split": ["$content", " "]}}}}, {"$group" : { "_id" : "$author", "n_word" : {"$sum":"$n_word"}}}]
+n_word_pipeline = [{"$match": {"content": {"$exists":True}}},{"$project": {"author": 1, "n_word": {"$size": {"$split": ["$content", " "]}}}}, {"$group" : { "_id" : "$author", "n_word" : {"$sum":"$n_word"}}}]
 data['n_word'] = {pseudos[d['_id']] : d['n_word'] for d in list(messages.aggregate(n_word_pipeline))}
 n_char_pipeline = [{"$match": {"content": {"$exists":True}}},{"$project": {"author": 1, "n_char": {"$strLenCP" : "$content"}}}, {"$group" : { "_id" : "$author", "n_char" : {"$sum":"$n_char"}}}]
 data['n_char'] = {pseudos[d['_id']] : d['n_char'] for d in list(messages.aggregate(n_char_pipeline))}
@@ -59,9 +59,9 @@ data['date_max'] = list(messages.aggregate([{"$group":{"_id": {}, "date_max": { 
 msg_by_month_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%m-%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
 msg_by_year_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
 msg_by_author_by_hour_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "hour": {"$dateToString": { "format": "%H", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
-msg_by_author_by_weekday_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "weekday": {"$dateToString": { "format": "%w", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+msg_by_author_by_weekday_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "weekday": {"$dateToString": { "format": "%w", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
 msg_by_author_by_month_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "date": {"$dateToString": { "format": "%m-%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
-msg_by_author_by_year_pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "year": {"$dateToString": { "format": "%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
+msg_by_author_by_year_pipeline = pipeline = [{"$project": {"author": 1, "date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : {"author": "$author", "year": {"$dateToString": { "format": "%Y", "date": "$date" }}}, "n_msg": {"$sum": 1}}}]
 # Faire les groupes par hour, weekday et month
 # data['n_msg_by_hour'] = {(d['_id']['author'], d['_id']['hour'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_hour_pipeline)}
 # data['n_msg_by_weekday'] = {(d['_id']['author'], d['_id']['weekday'] ) : d['n_msg'] for d in messages.aggregate(msg_by_author_by_weekday_pipeline)}
@@ -107,6 +107,8 @@ data_.pop('Estère', None)
 data_.pop('Kaven', None)
 data_.pop('Marcel Leboeuf', None)
 data_.pop('Pat Laf', None)
+data_.pop('P-E', None)
+data_.pop('Kamouk', None)
 df_msg_per_person = pd.DataFrame.from_dict(data_, orient="index", columns=['Messages'])
 
 fig1 = px.bar(df_msg_per_person, x=df_msg_per_person.index, y="Messages", title='Messages par touka', labels={
@@ -225,12 +227,8 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='react-per-touka',
         figure=fig4
-    ),
-
-    html.Embed(
-        src="http://6stream.xyz/watch.php?postid=25352"
     )
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
