@@ -6,7 +6,7 @@ import os
 msg_att= []
 authors = []
 
-filename = os.path.join("touka_13sept2021", "messages_all.json")
+filename = os.path.join("touka_08dec2021", "messages_all.json")
 
 data = json.load(codecs.open(filename, 'r', 'utf-8'))  # Pour avoir les caractères spéciaux
 
