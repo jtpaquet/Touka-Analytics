@@ -230,6 +230,10 @@ fig4.update_layout(
 # Bar charts n mot counter
 
 data_ = data['n_mot_counter']
+
+for doc in data_:
+    doc["_id"] = pseudos[doc["_id"]]
+
 df_n_mot_counter = pd.DataFrame.from_dict(data_)
 fig5 = px.bar(df_n_mot_counter, x='_id', y="n_mot", title='N mot compteur :(', labels={
                      "_id": "Touka",
