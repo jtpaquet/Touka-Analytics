@@ -39,7 +39,7 @@ def ToukaAnalytics():
 	connection = MongoClient(MONGODB_URI)
 	database = connection[DBS_NAME]
 	members = database['members']
-	messages = database['messages']
+	messages = database['messages_8dec_2021']
 	print('connexion time:', datetime.now()-t0)
 	pseudos = {author['name'] : author['pseudo'] for author in list(members.find())}
 	connection.close()
