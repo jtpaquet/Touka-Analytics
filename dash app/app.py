@@ -283,11 +283,19 @@ app.layout = html.Div(children=[
         figure=fig4
     ),
 
+    html.Div(dcc.Input(id='input-word-bar', type='text')),
+    html.Button('Touka recherche', id='search-word-button'),
+    
     dcc.Graph(
         id='n-mot-per-touka',
         figure=fig5
     )
 ])
+
+#@app.callback(
+#    Input('submit-val', 'n_clicks'),
+#    State('input-word-bar', 'value')
+#)
 
 if __name__ == '__main__':
     app.run_server(debug=False)
