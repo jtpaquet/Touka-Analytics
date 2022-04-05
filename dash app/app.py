@@ -68,6 +68,7 @@ data['date_min'] = list(messages.aggregate([{"$group":{"_id": {}, "date_min": { 
 
 data['date_max'] = list(messages.aggregate([{"$group":{"_id": {}, "date_max": { "$max": "$timestamp" }}}]))[0]['date_max']
 
+
 msg_by_month_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%m-%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
 
 msg_by_year_pipeline = [{"$project": {"date" : {"$toDate" : "$timestamp"}}}, {"$group" : {"_id" : { "$dateToString": { "format": "%Y", "date": "$date" }}, "n_msg": {"$sum": 1}}}]
@@ -129,11 +130,15 @@ print("Data compiled")
 
 msg_total = data["total_msg"]
 
+date_min = datetime.fromtimestamp(data["date_min"]/1000)
+date_min = date_min.strftime("%d %b %Y")
+date_max = datetime.fromtimestamp(data["date_max"]/1000)
+date_max = date_max.strftime("%d %b %Y")
+
 fig0 = go.Figure(go.Indicator(
     mode = "number",
     value = msg_total,
     title = {"text":"Messages", "align":"center"} ))
-
 
 
 # Bar chart msg per person
@@ -235,9 +240,9 @@ for doc in data_:
     doc["_id"] = pseudos[doc["_id"]]
 
 df_n_mot_counter = pd.DataFrame.from_dict(data_)
-fig5 = px.bar(df_n_mot_counter, x='_id', y="n_mot", title='N mot compteur :(', labels={
+fig5 = px.bar(df_n_mot_counter, x='_id', y="n_mot", title='Compteur de zeu', labels={
                      "_id": "Touka",
-                     "n_mot": "N mots"})
+                     "n_mot": "Zeu"})
 
 fig5.update_layout(
     autosize=False,
@@ -257,7 +262,9 @@ app.layout = html.Div(children=[
     html.H3(children='''
         Powered by Mr. Touka Poom
     '''),
-    
+
+    html.H3(children=f"{date_min} - {date_max}"),
+
     dcc.Graph(
         id='msg-total',
         figure=fig0
