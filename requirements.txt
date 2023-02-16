@@ -67,7 +67,7 @@ tiingo==0.13.0
 toml==0.10.1
 urllib3==1.26.3
 websocket==0.2.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 wrapt==1.12.1
 yfinance==0.1.55
 zope.event==4.5.0
